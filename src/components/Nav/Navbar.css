@@ -1,0 +1,67 @@
+@import url('https://use.typekit.net/qft2lfv.css');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Navbar {
+  height: calc(var(--vh, 1vh) * 7);
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f5dc;
+
+  z-index: 9999;
+  top: 0;
+  position: sticky;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+
+  transition: 0.3s;
+}
+
+.Navbar ul {
+  background-color: beige;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: calc(var(--vh, 1vh) * 100);
+  top: 0;
+  width: 100%;
+}
+
+.Navbar ul li {
+  position: relative;
+  display: inline;
+}
+
+.Navbar ul li a {
+  font-size: calc(0.75em + 9vmin);
+  border: none;
+  background-color: transparent;
+
+  pointer-events: all;
+  font-family: 'Shrikhand', cursive;
+  font-style: normal;
+  color: #ff7f51;
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.Navbar ul li a:hover {
+  color: black;
+}
+
+@media screen and (max-device-width: 700px) {
+  .Navbar ul li a {
+    font-size: calc(0.75em + 9vmin);
+  }
+}

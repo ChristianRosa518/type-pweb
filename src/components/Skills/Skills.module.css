@@ -1,0 +1,138 @@
+.container {
+  height: 90vh;
+  width: 100%;
+
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillSelect {
+  width: 40%;
+  height: 100%;
+}
+
+.skillSelect ul {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skillSelect li {
+  width: 90%;
+  list-style: none;
+  border-radius: 15px;
+  background-color: #4e4e4e;
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: calc(0.4em + 2.2vmin);
+
+  cursor: pointer;
+  padding: 10px;
+}
+
+.skillDescription {
+  width: 55%;
+  height: 100%;
+}
+
+.skillDescription ul {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillDescription ul h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  line-height: 1.1em;
+}
+
+.skillDescription ul li {
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(0.4em + 1.5vmin);
+  /* background-color: white; */
+}
+
+.active0 {
+  border: 3px solid blue;
+}
+
+.d0 li {
+  transition: all 0.3s;
+  color: cyan;
+  border: 2px solid cyan;
+}
+
+.d0 li:hover {
+  transition: all 0.3s;
+  color: white;
+  border: 2px solid white;
+}
+
+.d1 li {
+  transition: all 0.3s;
+  color: rgb(0, 255, 0);
+  border: 2px solid rgb(0, 255, 0);
+}
+.d1 li:hover {
+  transition: all 0.3s;
+  color: white;
+  border: 2px solid white;
+}
+.d2 li {
+  transition: all 0.3s;
+  color: rgb(235, 235, 0);
+  border: 2px solid rgb(235, 235, 0);
+}
+.d2 li:hover {
+  transition: all 0.3s;
+  color: white;
+  border: 2px solid white;
+}
+.d3 li {
+  transition: all 0.3s;
+  color: red;
+  border: 2px solid red;
+}
+.d3 li:hover {
+  transition: all 0.3s;
+  color: white;
+  border: 2px solid white;
+}
+.d4 li {
+  transition: all 0.3s;
+  color: violet;
+  border: 2px solid violet;
+}
+.d4 li:hover {
+  transition: all 0.3s;
+  color: white;
+  border: 2px solid white;
+}

@@ -1,0 +1,117 @@
+.burger_container {
+  position: relative;
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  /* border: 3px solid black; */
+  z-index: 5;
+  outline: none;
+}
+
+.burger_icon {
+  pointer-events: none;
+  z-index: 0;
+  width: 20px;
+  height: 5px;
+  background-color: #ff7f51;
+  /* background: rgba(255, 130, 88, 1); */
+  transition: all 0.5s ease-in-out;
+}
+
+.burger_icon::before,
+.burger_icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: #ff7f51;
+  /* background: rgba(255, 130, 88, 1); */
+  transition: all 0.5s ease-in-out;
+}
+
+.burger_icon::before {
+  transform: translate(-10.5px, -10px);
+}
+.burger_icon::after {
+  transform: translate(-10.5px, 10px);
+}
+
+.burger_container.open .burger_icon {
+  transform: translateX(-50px);
+  background: transparent;
+  width: 0px;
+  background-color: black;
+}
+.burger_container.open .burger_icon::before {
+  box-shadow: 0px 0px black;
+
+  transform: rotate(45deg) translate(25px, -25px);
+  background-color: black;
+}
+.burger_container.open .burger_icon::after {
+  transform: rotate(-45deg) translate(25px, 25px);
+  background-color: black;
+}
+
+.burger_container.color .burger_icon {
+  background: rgba(255, 130, 88, 1);
+}
+.burger_container.color .burger_icon::after {
+  background: rgba(255, 130, 88, 1);
+}
+.burger_container.color .burger_icon::before {
+  background: rgba(255, 130, 88, 1);
+}
+
+.logo {
+  outline: none;
+  pointer-events: all;
+  font-family: 'Kanit', sans-serif;
+
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: 32px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #ff7f51;
+  /* color: rgba(255, 130, 88, 1); */
+}
+.logoMobile {
+  text-shadow: 2px 3px black;
+  pointer-events: all;
+  font-family: 'Kanit', sans-serif;
+
+  font-weight: 500;
+  display: none;
+  font-size: 32px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: white;
+  /* color: rgba(255, 130, 88, 1); */
+}
+
+.logo:hover {
+  outline: none;
+  color: rgba(255, 130, 88, 1);
+  transition: 0.4s;
+}
+
+.logoColor {
+  color: rgba(255, 130, 88, 1);
+}
+
+@media only screen and (max-device-width: 700px) {
+  .logo {
+    display: none;
+  }
+  .logoMobile {
+    display: inline-block;
+  }
+}

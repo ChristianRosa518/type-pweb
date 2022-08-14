@@ -1,0 +1,173 @@
+.container {
+  height: auto;
+  width: 100%;
+  background-color: #282828;
+  position: relative;
+}
+
+.zindex {
+  z-index: 100;
+  position: absolute;
+}
+
+.title {
+  height: 22vh;
+  width: 70%;
+  margin: 0 auto;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: calc(1em + 4vmin);
+  line-height: 1.1em;
+
+  /* color: #fc8359; */
+  color: white;
+}
+
+.title p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(1em + 1vmin);
+  /* color: #fc8359; */
+  color: #fc8359;
+}
+
+.projectContainer {
+  background-color: #3a3a3a;
+  height: 80vh;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
+  /* border: 2px solid #ff7f51; */
+  /* background-color: yellow; */
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.projectContainer:hover {
+  box-shadow: 3px 3px 2px #fc8359;
+  transition: all 0.3s;
+}
+.projectTitle {
+  height: 8vh;
+  width: 100%;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectTitle h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: calc(1em + 3vmin);
+  /* line-height: 10%; */
+
+  color: white;
+}
+
+.project {
+  height: 60vh;
+  width: 100%;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 30px;
+}
+
+.projectLogo {
+  position: relative;
+  height: 100%;
+  width: 45%;
+  background-image: url('../../../public/images/personal.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.projectDescription {
+  height: 90%;
+  width: 45%;
+  /* background-color: red; */
+}
+.projectInsert {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 70%;
+
+  font-size: calc(0.4em + 1.8vmin);
+
+  color: #fc8359;
+}
+.projectDescription p {
+  line-height: 140%;
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: calc(0.4em + 1.5vmin);
+
+  color: white;
+}
+
+.projectButtons {
+  height: 8vh;
+  width: 100%;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 30px;
+}
+
+.revButton {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(0.4em + 1.5vmin);
+  border: 3px solid #fc8359;
+  background-color: transparent;
+  color: #fc8359;
+
+  padding: 15px 25px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.revButton:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+.button {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(0.4em + 1.5vmin);
+  border: 3px solid #fc8359;
+  background-color: #fc8359;
+  color: white;
+
+  padding: 15px 25px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.button:hover {
+  transform: scale(1.1);
+
+  transition: all 0.3s;
+}

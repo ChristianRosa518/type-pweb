@@ -1,0 +1,228 @@
+.step {
+  position: relative;
+  height: 12%;
+  width: 100%;
+  z-index: 1;
+  /* background-color: grey; */
+}
+.initialStep {
+  transition: all 4s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+  z-index: 1;
+  background-color: #161616;
+}
+
+.firstStep {
+  transition: background-color 4s;
+  right: 0;
+  background-color: #1f1f1f;
+  /* background-color: beige; */
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  pointer-events: all;
+}
+.secondStep {
+  pointer-events: all;
+  transition: background-color 4s;
+  background-color: #282828;
+  right: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+.thirdStep {
+  pointer-events: all;
+  transition: background-color 4s;
+  background-color: #313131;
+  right: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+}
+.fourthStep {
+  transition: background-color 4s;
+  background-color: #3a3a3a;
+  right: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.fifthStep {
+  transition: background-color 4s;
+  background-color: #444444;
+  right: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 6;
+}
+.sixthStep {
+  transition: background-color 4s;
+  background-color: #4e4e4e;
+  right: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 7;
+}
+
+.initialStep:hover {
+  background-color: cyan;
+  transition: background-color 0.1s;
+}
+
+.firstStep:hover {
+  background-color: rgb(0, 255, 0);
+  transition: background-color 0.1s;
+}
+
+.secondStep:hover {
+  background-color: rgb(235, 235, 0);
+  transition: background-color 0.1s;
+}
+.thirdStep:hover {
+  background-color: orangered;
+  transition: background-color 0.1s;
+}
+.fourthStep:hover {
+  background-color: red;
+  transition: background-color 0.1s;
+}
+.fifthStep:hover {
+  background-color: violet;
+  transition: background-color 0.1s;
+}
+.sixthStep:hover {
+  background-color: purple;
+  transition: background-color 0.1s;
+}
+
+.initialStepLock {
+  background-color: cyan;
+  transition: all 4s;
+}
+
+.firstStepLock {
+  background-color: rgb(0, 255, 0);
+  transition: background-color 4s;
+}
+
+.secondStepLock {
+  background-color: rgb(235, 235, 0);
+  transition: background-color 4s;
+}
+.thirdStepLock {
+  background-color: orangered;
+  transition: background-color 4s;
+}
+.fourthStepLock {
+  background-color: red;
+  transition: background-color 4s;
+}
+.fifthStepLock {
+  background-color: violet;
+  transition: background-color 4s;
+}
+.sixthStepLock {
+  background-color: purple;
+  transition: background-color 4s;
+}
+
+.stepChanger {
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(var(--vh, 1vh) * 9);
+  width: 10vw;
+  /* background-color: white; */
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changeAll {
+  z-index: 2;
+  position: absolute;
+  height: 9vh;
+  width: 10vw;
+  top: 9vh;
+  left: 0;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.changeAll button {
+  padding: 5px 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(0.2em + 1vmin);
+  color: #ff7f51;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 3px solid #ff7f51;
+
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.stepChanger button {
+  cursor: pointer;
+  pointer-events: all;
+  margin: 4px;
+  padding: 8px;
+
+  font-size: calc(0.45em + 3vmin);
+  font-weight: 400;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  background-color: transparent;
+  border: transparent;
+  color: #4e4e4e;
+  transition: 0.2s;
+}
+
+.stepChanger button:hover {
+  transition: 0.2s;
+  color: rgba(255, 130, 88, 1);
+}
+
+.stepChanger div {
+  pointer-events: all;
+  color: #4e4e4e;
+  font-size: calc(0.75em + 1vmin);
+  font-family: 'Shrikhand', cursive;
+  transition: 0.2s;
+}
+.stepChanger div:hover {
+  transition: 0.2s;
+  color: rgba(255, 130, 88, 1);
+}
+
+.absolute {
+  gap: 0;
+  z-index: 1;
+  top: 0;
+  position: absolute;
+  height: 100%;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-device-width: 800px) {
+  .stepChanger {
+    display: none;
+  }
+}

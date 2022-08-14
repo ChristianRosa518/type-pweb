@@ -1,0 +1,43 @@
+.home {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+
+  position: relative;
+
+  background-color: black;
+}
+
+.hero {
+  position: absolute;
+  z-index: 2;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  pointer-events: none;
+}
+
+.hero span {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: calc(1em + 2vmin);
+
+  color: #ff7f51;
+  /* pointer-events: all; */
+  cursor: pointer;
+}
+
+.hero p,
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(1em + 4vmin);
+  color: white;
+  text-shadow: 4px 3px 2px black;
+}

@@ -1,0 +1,106 @@
+.list {
+  height: 15%;
+  border: 3px solid white;
+  transition: all 0.3s;
+  color: white;
+}
+
+.active0 {
+  border: 3px solid cyan;
+  height: 19%;
+  transition: all 0.3s;
+  color: cyan;
+}
+.active1 {
+  border: 3px solid rgb(0, 255, 0);
+  height: 19%;
+  transition: all 0.3s;
+  color: rgb(0, 255, 0);
+}
+.active2 {
+  border: 3px solid rgb(235, 235, 0);
+  height: 19%;
+  transition: all 0.3s;
+  color: rgb(235, 235, 0);
+}
+.active3 {
+  border: 3px solid red;
+  height: 19%;
+  transition: all 0.3s;
+  color: red;
+}
+.active4 {
+  border: 3px solid violet;
+  height: 19%;
+  transition: all 0.3s;
+  color: violet;
+}
+
+/*  */
+
+.skills {
+  height: 50%;
+  width: 70%;
+  background-color: #3a3a3a;
+
+  border-radius: 25px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  transition: all 0.3s;
+}
+
+.b0:hover {
+  transition: all 0.3s;
+  box-shadow: 3px 3px 2px cyan;
+}
+.b1:hover {
+  transition: all 0.3s;
+  box-shadow: 3px 3px 2px rgb(0, 255, 0);
+}
+.b2:hover {
+  transition: all 0.3s;
+  box-shadow: 3px 3px 2px rgb(235, 235, 0);
+}
+.b3:hover {
+  transition: all 0.3s;
+  box-shadow: 3px 3px 2px red;
+}
+.b4:hover {
+  transition: all 0.3s;
+  box-shadow: 3px 3px 2px violet;
+}
+
+.skillset {
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: calc(1em + 5vmin);
+  transition: all 0.3s;
+}
+
+.c0:hover {
+  transition: all 0.3s;
+  color: cyan;
+}
+.c1:hover {
+  transition: all 0.3s;
+  color: rgb(0, 255, 0);
+}
+.c2:hover {
+  transition: all 0.3s;
+  color: rgb(235, 235, 0);
+}
+.c3:hover {
+  transition: all 0.3s;
+  color: red;
+}
+.c4:hover {
+  transition: all 0.3s;
+  color: violet;
+}
