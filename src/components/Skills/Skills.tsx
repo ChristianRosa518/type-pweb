@@ -77,6 +77,7 @@ export default function Skills() {
                 <li>HTML(5)</li>
                 <li>CSS(3)</li>
                 <li>JavaScript</li>
+                <li>TypeScript</li>
                 <li>Python</li>
                 <li>C++</li>
                 <li>PHP (Learning)</li>

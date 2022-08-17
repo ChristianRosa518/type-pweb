@@ -86,8 +86,8 @@
 
 .d0 li {
   transition: all 0.3s;
-  color: cyan;
-  border: 2px solid cyan;
+  color: #f4541a;
+  border: 2px solid #f4541a;
 }
 
 .d0 li:hover {
@@ -98,8 +98,8 @@
 
 .d1 li {
   transition: all 0.3s;
-  color: rgb(0, 255, 0);
-  border: 2px solid rgb(0, 255, 0);
+  color: #fe7f4c;
+  border: 2px solid #fe7f4c;
 }
 .d1 li:hover {
   transition: all 0.3s;
@@ -108,8 +108,8 @@
 }
 .d2 li {
   transition: all 0.3s;
-  color: rgb(235, 235, 0);
-  border: 2px solid rgb(235, 235, 0);
+  color: #ff9062;
+  border: 2px solid #ff9062;
 }
 .d2 li:hover {
   transition: all 0.3s;
@@ -118,8 +118,8 @@
 }
 .d3 li {
   transition: all 0.3s;
-  color: red;
-  border: 2px solid red;
+  color: #fe7f4c;
+  border: 2px solid #fe7f4c;
 }
 .d3 li:hover {
   transition: all 0.3s;
@@ -128,8 +128,8 @@
 }
 .d4 li {
   transition: all 0.3s;
-  color: violet;
-  border: 2px solid violet;
+  color: #f4541a;
+  border: 2px solid #f4541a;
 }
 .d4 li:hover {
   transition: all 0.3s;

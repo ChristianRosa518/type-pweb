@@ -6,34 +6,34 @@
 }
 
 .active0 {
-  border: 3px solid cyan;
+  border: 3px solid #f4541a;
   height: 19%;
   transition: all 0.3s;
-  color: cyan;
+  color: #f4541a;
 }
 .active1 {
-  border: 3px solid rgb(0, 255, 0);
+  border: 3px solid #fe7f4c;
   height: 19%;
   transition: all 0.3s;
-  color: rgb(0, 255, 0);
+  color: #fe7f4c;
 }
 .active2 {
-  border: 3px solid rgb(235, 235, 0);
+  border: 3px solid #ff9062;
   height: 19%;
   transition: all 0.3s;
-  color: rgb(235, 235, 0);
+  color: #ff9062;
 }
 .active3 {
-  border: 3px solid red;
+  border: 3px solid #fe7f4c;
   height: 19%;
   transition: all 0.3s;
-  color: red;
+  color: #fe7f4c;
 }
 .active4 {
-  border: 3px solid violet;
+  border: 3px solid #f4541a;
   height: 19%;
   transition: all 0.3s;
-  color: violet;
+  color: #f4541a;
 }
 
 /*  */
@@ -56,23 +56,23 @@
 
 .b0:hover {
   transition: all 0.3s;
-  box-shadow: 3px 3px 2px cyan;
+  box-shadow: 3px 3px 2px #f4541a;
 }
 .b1:hover {
   transition: all 0.3s;
-  box-shadow: 3px 3px 2px rgb(0, 255, 0);
+  box-shadow: 3px 3px 2px #fe7f4c;
 }
 .b2:hover {
   transition: all 0.3s;
-  box-shadow: 3px 3px 2px rgb(235, 235, 0);
+  box-shadow: 3px 3px 2px #ff9062;
 }
 .b3:hover {
   transition: all 0.3s;
-  box-shadow: 3px 3px 2px red;
+  box-shadow: 3px 3px 2px #fe7f4c;
 }
 .b4:hover {
   transition: all 0.3s;
-  box-shadow: 3px 3px 2px violet;
+  box-shadow: 3px 3px 2px #f4541a;
 }
 
 .skillset {
@@ -86,21 +86,21 @@
 
 .c0:hover {
   transition: all 0.3s;
-  color: cyan;
+  color: #f4541a;
 }
 .c1:hover {
   transition: all 0.3s;
-  color: rgb(0, 255, 0);
+  color: #fe7f4c;
 }
 .c2:hover {
   transition: all 0.3s;
-  color: rgb(235, 235, 0);
+  color: #ff9062;
 }
 .c3:hover {
   transition: all 0.3s;
-  color: red;
+  color: #fe7f4c;
 }
 .c4:hover {
   transition: all 0.3s;
-  color: violet;
+  color: #f4541a;
 }

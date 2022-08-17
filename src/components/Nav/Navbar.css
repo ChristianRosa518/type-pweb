@@ -11,9 +11,9 @@
   height: calc(var(--vh, 1vh) * 7);
   width: 100%;
   margin: 0 auto;
-  background-color: #f5f5dc;
+  background-color: beige;
 
-  z-index: 9999;
+  z-index: 10;
   top: 0;
   position: sticky;
 
@@ -25,12 +25,21 @@
 
   transition: 0.3s;
 }
+.navContainer {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+}
 
 .Navbar ul {
   background-color: beige;
   position: absolute;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100);
   top: 0;
@@ -50,7 +59,7 @@
   pointer-events: all;
   font-family: 'Shrikhand', cursive;
   font-style: normal;
-  color: #ff7f51;
+  color: #4e4e4e;
   text-decoration: none;
   transition: 0.4s;
   cursor: pointer;

@@ -34,12 +34,12 @@ interface StepChangerProps {
 export function StepChanger(props: StepChangerProps) {
   return (
     <div>
-      <div className="stepChanger">
+      <div className={`${props.color ? 'stepChangerLock' : 'stepChanger'}`}>
         <button onClick={props.removeChild}>-</button>
         <div>{props.Count}</div>
         <button onClick={props.addChild}>+</button>
       </div>
-      <div className="changeAll">
+      <div className={`changeAll ${props.color ? 'changeAllLock' : ''}`}>
         <button onClick={() => props.setColor(!props.color)}>
           {props.color === false ? 'Color All' : 'Remove Color'}
         </button>
@@ -48,13 +48,28 @@ export function StepChanger(props: StepChangerProps) {
   );
 }
 
+interface StepConProps {
+  color: boolean;
+  number: number;
+}
 interface StepProps {
   color: boolean;
-  number?: number;
+  getString: (min: number, max: number) => string;
+  getNum: (min: number, max: number) => number;
 }
-const Step = ({ color }: StepProps) => {
+const Step = ({ color }: StepConProps) => {
   const [active, setActive] = React.useState<boolean>(false);
 
+  function getNum(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function getString(min: number, max: number) {
+    let number: number = Math.random() * (max - min) + min;
+    let stringed: string = String(number);
+    let finishString: string = stringed.concat('%');
+    return finishString;
+  }
   return (
     <div className={'step'}>
       <div
@@ -67,253 +82,228 @@ const Step = ({ color }: StepProps) => {
         }`}
         onClick={() => setActive(!active)}
       ></div>
-      <FirstStep color={color} />
-      <SecondStep color={color} />
-      <ThirdStep color={color} />
-      <FourthStep color={color} />
-      <FifthStep color={color} />
-      <SixthStep color={color} />
+      <FirstStep color={color} getString={getString} getNum={getNum} />
+      <SecondStep color={color} getString={getString} getNum={getNum} />
+      <ThirdStep color={color} getString={getString} getNum={getNum} />
+      <FourthStep color={color} getString={getString} getNum={getNum} />
+      <FifthStep color={color} getString={getString} getNum={getNum} />
+      <SixthStep color={color} getString={getString} getNum={getNum} />
     </div>
   );
 };
 
-const FirstStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
+const FirstStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(75, 80),
+    final: getString(90, 95),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(75, 80));
-    setFinalValue(getRandomArbitraryStringPercent(90, 95));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
-
-  // Framer-motion error with types.
-  // Or maybe i'm too lazy to find a fix. cause I have the types here
-  // but I still get the error
-  let firstVar: any = {
+  let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
-      variants={firstVar}
+      variants={Var}
       className={`firstStep ${
-        active ? 'firstStepLock' : '' || color === true ? 'firstStepLock' : ''
+        state.active ? 'firstStepLock' : '' || color ? 'firstStepLock' : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };
 
-const SecondStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
+const SecondStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(55, 58),
+    final: getString(70, 74),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(55, 58));
-    setFinalValue(getRandomArbitraryStringPercent(70, 74));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
   let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
       variants={Var}
       className={`secondStep ${
-        active ? 'secondStepLock' : '' || color === true ? 'secondStepLock' : ''
+        state.active
+          ? 'secondStepLock'
+          : '' || color === true
+          ? 'secondStepLock'
+          : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };
 
-const ThirdStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
-
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(44, 45));
-    setFinalValue(getRandomArbitraryStringPercent(53, 54));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
+const ThirdStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(44, 45),
+    final: getString(53, 54),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
   let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
       variants={Var}
       className={`thirdStep ${
-        active ? 'thirdStepLock' : '' || color === true ? 'thirdStepLock' : ''
+        state.active
+          ? 'thirdStepLock'
+          : '' || color === true
+          ? 'thirdStepLock'
+          : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };
 
-const FourthStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
+const FourthStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(33, 37),
+    final: getString(39, 43),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(33, 37));
-    setFinalValue(getRandomArbitraryStringPercent(39, 43));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
   let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
       variants={Var}
       className={`fourthStep ${
-        active ? 'fourthStepLock' : '' || color === true ? 'fourthStepLock' : ''
+        state.active
+          ? 'fourthStepLock'
+          : '' || color === true
+          ? 'fourthStepLock'
+          : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };
 
-const FifthStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
+const FifthStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(14, 23),
+    final: getString(24, 32),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(14, 23));
-    setFinalValue(getRandomArbitraryStringPercent(24, 32));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
   let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
       variants={Var}
       className={`fifthStep ${
-        active ? 'fifthStepLock' : '' || color === true ? 'fifthStepLock' : ''
+        state.active
+          ? 'fifthStepLock'
+          : '' || color === true
+          ? 'fifthStepLock'
+          : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };
-const SixthStep = ({ color }: StepProps) => {
-  const [active, setActive] = React.useState<boolean>(false);
-  const [firstValue, setFirstValue] = React.useState<string>('');
-  const [finalValue, setFinalValue] = React.useState<string>('');
-  const [duration, setDuration] = React.useState<number>(0);
-
-  function getRandomArbitraryStringPercent(min: number, max: number) {
-    let number: number = Math.random() * (max - min) + min;
-    let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
-    return finishString;
-  }
-  function getRandomArbitraryNum(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-  React.useEffect(() => {
-    setFirstValue(getRandomArbitraryStringPercent(3, 5));
-    setFinalValue(getRandomArbitraryStringPercent(6, 13));
-    setDuration(getRandomArbitraryNum(7, 10));
-  }, []);
+const SixthStep = ({ color, getString, getNum }: StepProps) => {
+  const [state, setState] = React.useState<{
+    first: string;
+    final: string;
+    duration: number;
+    active: boolean;
+  }>({
+    first: getString(3, 5),
+    final: getString(6, 13),
+    duration: getNum(7, 10),
+    active: false,
+  });
 
   let Var: any = {
     animate: {
-      width: [firstValue, finalValue, firstValue],
-      transition: { duration: duration, repeat: Infinity },
+      width: [state.first, state.final, state.first],
+      transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
   return (
     <motion.div
       id={'initialOne'}
       animate={'animate'}
       variants={Var}
       className={`sixthStep ${
-        active ? 'sixthStepLock' : '' || color === true ? 'sixthStepLock' : ''
+        state.active
+          ? 'sixthStepLock'
+          : '' || color === true
+          ? 'sixthStepLock'
+          : ''
       }`}
-      onClick={() => setActive(!active)}
+      onClick={() => setState({ ...state, active: !state.active })}
     ></motion.div>
   );
 };

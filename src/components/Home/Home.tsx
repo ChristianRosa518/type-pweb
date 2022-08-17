@@ -32,7 +32,7 @@ export default function Home() {
         removeChild={onRemoveChild}
         addChild={onAddChild}
       />
-      <div className={styles.hero}>
+      <div className={`${styles.hero} ${color ? `${styles.heroLock}` : ''}`}>
         <h1>
           Hello, I'm <span>Christian Rosa</span>
         </h1>

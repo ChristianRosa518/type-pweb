@@ -69,68 +69,86 @@
 }
 
 .initialStep:hover {
-  background-color: cyan;
+  background-color: #be3f16;
   transition: background-color 0.1s;
 }
 
 .firstStep:hover {
-  background-color: rgb(0, 255, 0);
+  background-color: #f4541a;
   transition: background-color 0.1s;
 }
 
 .secondStep:hover {
-  background-color: rgb(235, 235, 0);
+  background-color: #fe7f4c;
   transition: background-color 0.1s;
 }
 .thirdStep:hover {
-  background-color: orangered;
+  background-color: #ff9062;
   transition: background-color 0.1s;
 }
 .fourthStep:hover {
-  background-color: red;
+  background-color: #fe7f4c;
   transition: background-color 0.1s;
 }
 .fifthStep:hover {
-  background-color: violet;
+  background-color: #f4541a;
   transition: background-color 0.1s;
 }
 .sixthStep:hover {
-  background-color: purple;
+  background-color: #be3f16;
   transition: background-color 0.1s;
 }
 
 .initialStepLock {
-  background-color: cyan;
+  background-color: #be3f16;
   transition: all 4s;
 }
 
 .firstStepLock {
-  background-color: rgb(0, 255, 0);
+  background-color: #f4541a;
   transition: background-color 4s;
 }
 
 .secondStepLock {
-  background-color: rgb(235, 235, 0);
+  background-color: #fe7f4c;
   transition: background-color 4s;
 }
+
 .thirdStepLock {
-  background-color: orangered;
+  background-color: #ff9062;
   transition: background-color 4s;
 }
+
 .fourthStepLock {
-  background-color: red;
+  background-color: #fe7f4c;
   transition: background-color 4s;
 }
+
 .fifthStepLock {
-  background-color: violet;
+  background-color: #f4541a;
   transition: background-color 4s;
 }
+
 .sixthStepLock {
-  background-color: purple;
+  background-color: #be3f16;
   transition: background-color 4s;
 }
 
 .stepChanger {
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(var(--vh, 1vh) * 9);
+  width: 10vw;
+  /* background-color: white; */
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stepChangerLock {
   pointer-events: none;
   z-index: 2;
   position: absolute;
@@ -165,12 +183,19 @@
   font-family: 'Montserrat', sans-serif;
   font-size: calc(0.2em + 1vmin);
   color: #ff7f51;
-  background-color: transparent;
   border-radius: 5px;
+  background-color: transparent;
   border: 3px solid #ff7f51;
 
   cursor: pointer;
   pointer-events: all;
+  transition: 4s;
+}
+
+.changeAllLock button {
+  color: #161616;
+  border: 3px solid #161616;
+  transition: 4s;
 }
 
 .stepChanger button {
@@ -186,8 +211,8 @@
   font-style: normal;
   background-color: transparent;
   border: transparent;
-  color: #4e4e4e;
   transition: 0.2s;
+  color: #4e4e4e;
 }
 
 .stepChanger button:hover {
@@ -196,13 +221,48 @@
 }
 
 .stepChanger div {
-  pointer-events: all;
   color: #4e4e4e;
+  pointer-events: all;
   font-size: calc(0.75em + 1vmin);
   font-family: 'Shrikhand', cursive;
   transition: 0.2s;
 }
 .stepChanger div:hover {
+  transition: 0.2s;
+  color: rgba(255, 130, 88, 1);
+}
+
+.stepChangerLock button {
+  cursor: pointer;
+  pointer-events: all;
+  margin: 4px;
+  padding: 8px;
+
+  font-size: calc(0.45em + 3vmin);
+  font-weight: 400;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  background-color: transparent;
+  border: transparent;
+  transition: 4s;
+  color: #161616;
+}
+
+.stepChangerLock div {
+  color: #161616;
+  pointer-events: all;
+  font-size: calc(0.75em + 1vmin);
+  font-family: 'Shrikhand', cursive;
+  transition: 4s;
+}
+
+.stepChangerLock div:hover {
+  transition: 0.2s;
+  color: rgba(255, 130, 88, 1);
+}
+
+.stepChangerLock button:hover {
   transition: 0.2s;
   color: rgba(255, 130, 88, 1);
 }
