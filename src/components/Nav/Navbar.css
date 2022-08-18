@@ -11,7 +11,7 @@
   height: calc(var(--vh, 1vh) * 7);
   width: 100%;
   margin: 0 auto;
-  background-color: beige;
+  background-color: #1f1f1f;
 
   z-index: 10;
   top: 0;
@@ -35,37 +35,62 @@
   flex-direction: row;
 }
 
-.Navbar ul {
-  background-color: beige;
-  position: absolute;
+.burgerDrop {
+  background-color: #fc8359;
+  position: fixed;
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100);
   top: 0;
   width: 100%;
+  z-index: 20;
 }
 
-.Navbar ul li {
+.burgerDrop li {
   position: relative;
   display: inline;
+  text-align: center;
 }
 
-.Navbar ul li a {
+.burgerDrop li a {
   font-size: calc(0.75em + 9vmin);
   border: none;
   background-color: transparent;
 
   pointer-events: all;
-  font-family: 'Shrikhand', cursive;
-  font-style: normal;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
   color: #4e4e4e;
   text-decoration: none;
   transition: 0.4s;
   cursor: pointer;
+  text-align: center;
+}
+.burgerDrop li a:hover {
+  transition: 0.4s;
+  color: black;
 }
 
-.Navbar ul li a:hover {
+.navClose {
+  color: #fc8359;
+  cursor: pointer;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-size: calc(1em + 2vmin);
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 4vh;
+  right: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navClose {
+  transition: 0.4s;
   color: black;
 }
 

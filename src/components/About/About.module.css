@@ -1,0 +1,30 @@
+.title {
+  height: 25vh;
+  width: 70%;
+  margin: 0 auto;
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: calc(1em + 4vmin);
+  line-height: 1.1em;
+
+  /* color: #fc8359; */
+  color: beige;
+}
+
+.title p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(1em + 1vmin);
+  /* color: #fc8359; */
+  color: #fc8359;
+}

@@ -19,7 +19,7 @@
   z-index: 0;
   width: 20px;
   height: 5px;
-  background-color: #4e4e4e;
+  background-color: #fc8359;
   /* background: rgba(255, 130, 88, 1); */
   transition: all 0.5s ease-in-out;
 }
@@ -30,7 +30,7 @@
   position: absolute;
   width: 30px;
   height: 5px;
-  background-color: #4e4e4e;
+  background-color: #fc8359;
   /* background: rgba(255, 130, 88, 1); */
   transition: all 0.5s ease-in-out;
 }
@@ -80,7 +80,7 @@
   font-size: 32px;
   transition: 0.3s;
   cursor: pointer;
-  color: #4e4e4e;
+  color: #fc8359;
   /* color: rgba(255, 130, 88, 1); */
 }
 .logoMobile {
@@ -105,37 +105,6 @@
 
 .logoColor {
   /* color: rgba(255, 130, 88, 1); */
-}
-
-.burgerDrop {
-  background-color: beige;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100);
-  top: 0;
-  width: 100%;
-  z-index: 20;
-}
-
-.burgerDrop li {
-  position: relative;
-  display: inline;
-}
-
-.burgerDrop li a {
-  font-size: calc(0.75em + 9vmin);
-  border: none;
-  background-color: transparent;
-
-  pointer-events: all;
-  font-family: 'Shrikhand', cursive;
-  font-style: normal;
-  color: #4e4e4e;
-  text-decoration: none;
-  transition: 0.4s;
-  cursor: pointer;
 }
 
 @media only screen and (max-device-width: 700px) {

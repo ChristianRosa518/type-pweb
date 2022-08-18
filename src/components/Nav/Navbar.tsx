@@ -76,6 +76,17 @@ export const BurgerMenu = ({ open, setOpen }: openProps) => {
           transition={{ duration: 0.5 }}
           exit={{ height: '0vh', transition: { duration: 0.5 } }}
         >
+          <motion.div
+            key={'close'}
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0 }}
+            exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
+            className={'navClose'}
+            onClick={() => setOpen(!open)}
+          >
+            X
+          </motion.div>
           <motion.li
             key={'List1'}
             initial={animateFrom}

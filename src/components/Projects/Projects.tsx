@@ -1,5 +1,5 @@
 import styles from './Projects.module.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Skills from '../Skills/Skills';
 
 export default function Projects() {
@@ -15,44 +15,7 @@ export default function Projects() {
         </div>
         <div className={styles.project}>
           <div className={styles.projectLogo}></div>
-          <div className={styles.projectDescription}>
-            <section>
-              <p>
-                <span className={styles.projectInsert}>
-                  Sassy's Specialty Sandwiches&nbsp;
-                </span>
-                Is my first project, Sassy's initially started as a project used
-                to familiarize myself with Html, Css, and Javascript. But
-                eventually transformed into my first e-commerce React project
-              </p>
-            </section>
-            <br />
-            <section>
-              <p>
-                The objective for this site was to make it as easy as possible
-                for a user to buy a sandwich, almost everything interactable on
-                this website will allow you to buy a sandwich
-              </p>
-            </section>
-            <br />
-
-            <section>
-              <p>
-                The most challenging part about this website was understanding
-                Stripe, I had no clue on how to handle a purchase online and
-                Stripe saved me , payment intents were a bugger to figure out
-                but eventually I did.
-              </p>
-            </section>
-            <br />
-            <section>
-              <p>
-                This website isn't entirely finished, I don't think it ever will
-                be, but that's okay, with how I coded things, updating this site
-                will take no time at all!
-              </p>
-            </section>
-          </div>
+          <ProjectDesciption />
         </div>
         <div className={styles.projectButtons}>
           <button className={styles.button}>Website Link</button>
@@ -63,3 +26,70 @@ export default function Projects() {
     </div>
   );
 }
+
+const ProjectDesciption = () => {
+  const [languages, setLanguages] = React.useState<number>(0);
+
+  return (
+    <div className={styles.projectDescription}>
+      <div className={styles.languageContainer}>
+        <div className={styles.languageTitle}>
+          <h2
+            className={`${languages === 1 ? `${styles.active}` : ''}`}
+            onClick={() => setLanguages(1)}
+          >
+            Apis
+          </h2>
+          <h2
+            className={`${languages === 0 ? `${styles.active}` : ''}`}
+            onClick={() => setLanguages(0)}
+          >
+            Languages
+          </h2>
+          <h2
+            className={`${languages === 2 ? `${styles.active}` : ''}`}
+            onClick={() => setLanguages(2)}
+          >
+            CI/CD
+          </h2>
+        </div>
+        {languages === 0 && (
+          <ul>
+            <li>Html</li>
+            <li>Css</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+            <li>TypeScript (update planned)</li>
+          </ul>
+        )}
+        {languages === 1 && (
+          <ul>
+            <li>Stripe</li>
+            <li>Google Geocode</li>
+            <li>Google Maps</li>
+            <li>Framer-Motion</li>
+          </ul>
+        )}
+        {languages === 2 && (
+          <ul>
+            <li>Heroku Hosted</li>
+            <li>GitHub</li>
+          </ul>
+        )}
+      </div>
+      <div className={styles.projectInformation}>
+        <section>
+          <p>
+            <span className={styles.projectInsert}>
+              Sassy's Specialty Sandwiches&nbsp;
+            </span>
+            Is my first project, Sassy's initially started as a project used to
+            familiarize myself with Html, Css, and Javascript. But eventually
+            transformed into my first e-commerce React project
+          </p>
+        </section>
+      </div>
+    </div>
+  );
+};

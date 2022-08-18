@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Navbar, { BurgerMenu } from './components/Nav/Navbar';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
+import { About } from './components/About/About';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
       <Home />
       <Navbar open={open} setOpen={setOpen} />
       <div className="section">
+        <About />
         <Projects />
         <Skills />
       </div>

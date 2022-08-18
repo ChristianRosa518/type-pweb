@@ -8,6 +8,10 @@ export default function Skills() {
 
   return (
     <section className={styles.container}>
+      <div className={styles.title}>
+        <h2>My Abilities</h2>
+        <p>I can do this, I can do that</p>
+      </div>
       <div
         className={`skills ${skills === 0 ? 'b0' : ''}${
           skills === 1 ? 'b1' : ''

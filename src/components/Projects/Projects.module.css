@@ -11,13 +11,14 @@
 }
 
 .title {
-  height: 22vh;
+  height: 25vh;
   width: 70%;
   margin: 0 auto;
   /* background-color: blue; */
 
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -30,7 +31,7 @@
   line-height: 1.1em;
 
   /* color: #fc8359; */
-  color: white;
+  color: beige;
 }
 
 .title p {
@@ -74,7 +75,7 @@
   font-size: calc(1em + 3vmin);
   /* line-height: 10%; */
 
-  color: white;
+  color: beige;
 }
 
 .project {
@@ -104,9 +105,11 @@
 }
 
 .projectDescription {
-  height: 90%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   width: 45%;
-  /* background-color: red; */
 }
 .projectInsert {
   font-family: 'Kanit', sans-serif;
@@ -124,7 +127,12 @@
 
   font-size: calc(0.4em + 1.5vmin);
 
-  color: white;
+  color: beige;
+}
+.projectInformation {
+  height: 80%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .projectButtons {
@@ -160,7 +168,7 @@
   font-size: calc(0.4em + 1.5vmin);
   border: 3px solid #fc8359;
   background-color: #fc8359;
-  color: white;
+  color: beige;
 
   padding: 15px 25px;
   border-radius: 25px;
@@ -170,4 +178,67 @@
   transform: scale(1.1);
 
   transition: all 0.3s;
+}
+
+.languageContainer {
+  height: 30%;
+  width: 100%;
+  /* border: 3px solid #fc8359; */
+  display: flex;
+  flex-direction: column;
+}
+.languageTitle {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.languageTitle h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 70%;
+  /* letter-spacing: 1px; */
+
+  font-size: calc(0.4em + 1.8vmin);
+  color: beige;
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.active {
+  border-bottom: 2px solid beige !important;
+}
+.languageContainer > ul {
+  height: auto;
+  width: 100%;
+  display: flex;
+  /* justify-content: baseline; */
+  align-content: baseline;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.languageContainer ul > li {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(0.4em + 1.5vmin);
+
+  transition: all 0.3s;
+  color: #ff9062;
+  border: 2px solid #ff9062;
+}
+.languageContainer ul li:hover {
+  transition: all 0.3s;
+  color: beige;
+  border: 2px solid beige;
 }
