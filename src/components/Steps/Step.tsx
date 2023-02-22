@@ -7,20 +7,35 @@ interface StepContainerProps {
   color: boolean;
 }
 
-export class StepContainer extends React.Component<StepContainerProps> {
-  state = {
-    numSteps: this.props.Count,
-  };
+export function StepContainer(props: StepContainerProps) {
+    const [numSteps, setNumSteps] = React.useState<number>(props.Count);
+    const [totalSteps] = React.useState<number>(props.Count * 7);
+    const [coloredSteps, setColoredSteps] = React.useState<number>(0);
 
-  render() {
     const children = [];
 
-    for (var i = 0; i < this.props.Count; i += 1) {
-      children.push(<Step color={this.props.color} key={i} number={i} />);
+    function colorStepAdd(){
+      let value = coloredSteps + 1
+      setColoredSteps(value)
     }
 
-    return <div className="absolute">{children}</div>;
-  }
+    function colorDecrease(){
+      let value = coloredSteps - 1
+      setColoredSteps(value)
+    }
+
+    for (var i = 0; i < props.Count; i += 1) {
+      children.push(<Step color={props.color} totalSteps={totalSteps} coloredSteps={coloredSteps} colorAdd={colorStepAdd} colorDecrease={colorDecrease} key={i} number={i} />);
+    }
+
+    
+    
+    
+    return (
+      <div>
+        return <div className="absolute">{children}{coloredSteps} Don't remove till above 50 triggers full color change</div>;
+      </div>
+    );
 }
 
 interface StepChangerProps {
@@ -51,13 +66,19 @@ export function StepChanger(props: StepChangerProps) {
 interface StepConProps {
   color: boolean;
   number: number;
+  totalSteps: number;
+  coloredSteps: number;
+  colorAdd: () => void; 
+  colorDecrease: () => void;
 }
 interface StepProps {
+  totalSteps: number;
+  coloredSteps: number;
   color: boolean;
   getString: (min: number, max: number) => string;
   getNum: (min: number, max: number) => number;
 }
-const Step = ({ color }: StepConProps) => {
+const Step = ({ color, totalSteps, coloredSteps, colorAdd, colorDecrease  }: StepConProps) => {
   const [active, setActive] = React.useState<boolean>(false);
 
   function getNum(min: number, max: number) {
@@ -70,6 +91,17 @@ const Step = ({ color }: StepConProps) => {
     let finishString: string = stringed.concat('%');
     return finishString;
   }
+  function toggleColor(){
+    if (active === false) {
+      setActive(!active)
+      colorAdd();
+      console.log(coloredSteps)
+    }
+    else { 
+      setActive(!active);
+      colorDecrease();
+      coloredSteps -= 1}
+  }
   return (
     <div className={'step'}>
       <div
@@ -80,14 +112,14 @@ const Step = ({ color }: StepConProps) => {
             ? 'initialStepLock'
             : ''
         }`}
-        onClick={() => setActive(!active)}
+        onClick={() => toggleColor()}
       ></div>
-      <FirstStep color={color} getString={getString} getNum={getNum} />
-      <SecondStep color={color} getString={getString} getNum={getNum} />
-      <ThirdStep color={color} getString={getString} getNum={getNum} />
-      <FourthStep color={color} getString={getString} getNum={getNum} />
-      <FifthStep color={color} getString={getString} getNum={getNum} />
-      <SixthStep color={color} getString={getString} getNum={getNum} />
+      <FirstStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <SecondStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <ThirdStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <FourthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <FifthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <SixthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
     </div>
   );
 };
