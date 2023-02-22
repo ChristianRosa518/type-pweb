@@ -28,3 +28,53 @@
   /* color: #fc8359; */
   color: #fc8359;
 }
+
+.aboutContainer {
+  background-color: #3a3a3a;
+  height: 80vh;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
+  /* border: 2px solid #ff7f51; */
+  /* background-color: yellow; */
+  overflow: hidden;
+  transition: all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  height: 80%;
+  width: 40%;
+  background-color: red;
+}
+
+.aboutInfoContainer {
+  height: 90%;
+  width: 50%;
+  /* background-color: gray; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow-y: auto;
+}
+
+.aboutInfoContainer h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: calc(1em + 4vmin);
+  line-height: 1.1em;
+}
+
+.aboutInfoContainer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(1em + 1vmin);
+  /* color: #fc8359; */
+  color: #fc8359;
+}

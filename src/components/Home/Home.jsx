@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { StepChanger, StepContainer } from '../Steps/Step';
-
+import { Typewriter } from 'react-simple-typewriter';
 import styles from './Home.module.css';
 
+// Changed file to jsx because of Typewriter component.
+
 export default function Home() {
-  const [stepCount, setStepCount] = useState<number>(20);
-  const [color, setColor] = useState<boolean>(false);
+  const [stepCount, setStepCount] = useState(20);
+  const [color, setColor] = useState(false);
 
   function onAddChild() {
     if (stepCount === 35) {
@@ -33,10 +35,22 @@ export default function Home() {
         addChild={onAddChild}
       />
       <div className={`${styles.hero} ${color ? `${styles.heroLock}` : ''}`}>
-        <h1>
-          Hello, I'm <span>Christian Rosa</span>
-        </h1>
-        <p>I'm a Front end Developer</p>
+        <h1>Your next</h1>
+        <p>
+          &nbsp;
+          <Typewriter
+            words={[
+              'Front End Developer',
+              'Fullstack Software Engineer',
+              'Back End Engineer',
+              'Front End Engineer',
+              'Fullstack Developer',
+              'Back End Developer',
+            ]}
+            loop={false}
+            delaySpeed={2500}
+          />
+        </p>
       </div>
     </section>
   );
