@@ -1,5 +1,89 @@
 .carouselContainer {
   height: 80%;
   width: 40%;
-  background-color: red;
+  /* background-color: red; */
+
+  /* overflow: hidden; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/* Image Sizing */
+
+.carouselContainer img {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  object-fit: none;
+}
+.img1 {
+  object-position: 20% 50%;
+}
+.img2 {
+  object-position: 40% 0%;
+  zoom: 40%;
+}
+.img3 {
+  object-position: 20% 0%;
+}
+.img4 {
+  zoom: 70%;
+}
+.img5 {
+}
+.img6 {
+  object-position: 70% 20%;
+  zoom: 18%;
+}
+.img7 {
+  object-position: 50% 50%;
+  zoom: 18%;
+}
+.img8 {
+  object-position: 50% 50%;
+  zoom: 70%;
+}
+.img9 {
+  object-position: 50% 50%;
+  zoom: 60%;
+}
+.img10 {
+  object-position: 50% 50%;
+  zoom: 400%;
+}
+.img11 {
+  object-position: 50% 50%;
+  zoom: 70%;
+}
+
+.slide {
+  /* opacity: 0; */
+  transition-duration: 1s ease;
+}
+.slide.active {
+  /* opacity: 1; */
+  transition-duration: 1s;
+  /* transform: scale(1); */
+}
+
+.forward {
+  height: 10%;
+  width: 10%;
+  bottom: 50;
+  right: 0;
+  background-color: blue;
+  position: absolute;
+  z-index: 2;
+}
+.backward {
+  height: 10%;
+  width: 10%;
+  bottom: 50;
+  left: 0;
+  background-color: green;
+  position: absolute;
+  z-index: 2;
 }

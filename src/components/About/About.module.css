@@ -11,7 +11,7 @@
 }
 
 .title h2 {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
 
@@ -23,7 +23,7 @@
 }
 
 .title p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: calc(1em + 1vmin);
   /* color: #fc8359; */
   color: #fc8359;
@@ -61,20 +61,24 @@
   align-items: center;
 
   overflow-y: auto;
+  padding: 10px;
 }
 
 .aboutInfoContainer h2 {
-  font-family: 'Kanit', sans-serif;
+  color: beige;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
 
-  font-size: calc(1em + 4vmin);
+  font-size: calc(1em + 3vmin);
   line-height: 1.1em;
 }
 
 .aboutInfoContainer p {
-  font-family: 'Montserrat', sans-serif;
+  line-height: 120%;
+  font-family: "Montserrat", sans-serif;
   font-size: calc(1em + 1vmin);
+  font-size: calc(0.6em + 1.5vmin);
   /* color: #fc8359; */
   color: #fc8359;
 }
