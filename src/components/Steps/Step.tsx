@@ -1,41 +1,38 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Steps.css';
+import React from "react";
+import { motion } from "framer-motion";
+import "./Steps.css";
 
 interface StepContainerProps {
   Count: number;
   color: boolean;
+  totalSteps: number;
+  coloredSteps: number;
+  colorStepAdd: () => void;
+  colorDecrease: () => void;
 }
 
 export function StepContainer(props: StepContainerProps) {
-    const [numSteps, setNumSteps] = React.useState<number>(props.Count);
-    const [totalSteps] = React.useState<number>(props.Count * 7);
-    const [coloredSteps, setColoredSteps] = React.useState<number>(0);
+  const children = [];
 
-    const children = [];
-
-    function colorStepAdd(){
-      let value = coloredSteps + 1
-      setColoredSteps(value)
-    }
-
-    function colorDecrease(){
-      let value = coloredSteps - 1
-      setColoredSteps(value)
-    }
-
-    for (var i = 0; i < props.Count; i += 1) {
-      children.push(<Step color={props.color} totalSteps={totalSteps} coloredSteps={coloredSteps} colorAdd={colorStepAdd} colorDecrease={colorDecrease} key={i} number={i} />);
-    }
-
-    
-    
-    
-    return (
-      <div>
-        return <div className="absolute">{children}{coloredSteps} Don't remove till above 50 triggers full color change</div>;
-      </div>
+  for (var i = 0; i < props.Count; i += 1) {
+    children.push(
+      <Step
+        color={props.color}
+        totalSteps={props.totalSteps}
+        coloredSteps={props.coloredSteps}
+        colorAdd={props.colorStepAdd}
+        colorDecrease={props.colorDecrease}
+        key={i}
+        number={i}
+      />
     );
+  }
+
+  return (
+    <div>
+      return <div className="absolute">{children}</div>;
+    </div>
+  );
 }
 
 interface StepChangerProps {
@@ -44,20 +41,24 @@ interface StepChangerProps {
   Count: number;
   removeChild: () => void;
   addChild: () => void;
+  clear: HTMLInputElement;
 }
 
 export function StepChanger(props: StepChangerProps) {
   return (
     <div>
-      <div className={`${props.color ? 'stepChangerLock' : 'stepChanger'}`}>
+      <div className={`${props.color ? "stepChangerLock" : "stepChanger"}`}>
         <button onClick={props.removeChild}>-</button>
         <div>{props.Count}</div>
         <button onClick={props.addChild}>+</button>
       </div>
-      <div className={`changeAll ${props.color ? 'changeAllLock' : ''}`}>
+      <div className={`changeAll ${props.color ? "changeAllLock" : ""}`}>
         <button onClick={() => props.setColor(!props.color)}>
-          {props.color === false ? 'Color All' : 'Remove Color'}
+          {props.color === false ? "Color All" : "Remove Color"}
         </button>
+        {/* Look into USEREF, useEFFECT. */}
+        {/* Would love to add clear functionality, but I don't think it is possible. The issue being each individual step having individual states. how would I update all of those child's states with one command from a parent container?  */}
+        {/* <button> Clear </button> */}
       </div>
     </div>
   );
@@ -68,7 +69,7 @@ interface StepConProps {
   number: number;
   totalSteps: number;
   coloredSteps: number;
-  colorAdd: () => void; 
+  colorAdd: () => void;
   colorDecrease: () => void;
 }
 interface StepProps {
@@ -77,8 +78,16 @@ interface StepProps {
   color: boolean;
   getString: (min: number, max: number) => string;
   getNum: (min: number, max: number) => number;
+  colorAdd: () => void;
+  colorDecrease: () => void;
 }
-const Step = ({ color, totalSteps, coloredSteps, colorAdd, colorDecrease  }: StepConProps) => {
+const Step = ({
+  color,
+  totalSteps,
+  coloredSteps,
+  colorAdd,
+  colorDecrease,
+}: StepConProps) => {
   const [active, setActive] = React.useState<boolean>(false);
 
   function getNum(min: number, max: number) {
@@ -88,43 +97,96 @@ const Step = ({ color, totalSteps, coloredSteps, colorAdd, colorDecrease  }: Ste
   function getString(min: number, max: number) {
     let number: number = Math.random() * (max - min) + min;
     let stringed: string = String(number);
-    let finishString: string = stringed.concat('%');
+    let finishString: string = stringed.concat("%");
     return finishString;
   }
-  function toggleColor(){
+  function toggleColor() {
     if (active === false) {
-      setActive(!active)
+      setActive(!active);
       colorAdd();
-      console.log(coloredSteps)
-    }
-    else { 
+    } else {
       setActive(!active);
       colorDecrease();
-      coloredSteps -= 1}
+    }
   }
   return (
-    <div className={'step'}>
+    <div className={"step"}>
       <div
         className={`initialStep ${
           active
-            ? 'initialStepLock'
-            : '' || color === true
-            ? 'initialStepLock'
-            : ''
+            ? "initialStepLock"
+            : "" || color === true
+            ? "initialStepLock"
+            : ""
+        }
         }`}
         onClick={() => toggleColor()}
       ></div>
-      <FirstStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
-      <SecondStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
-      <ThirdStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
-      <FourthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
-      <FifthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
-      <SixthStep color={color} getString={getString} getNum={getNum} totalSteps={totalSteps} coloredSteps={coloredSteps}/>
+      <FirstStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
+      <SecondStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
+      <ThirdStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
+      <FourthStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
+      <FifthStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
+      <SixthStep
+        color={color}
+        getString={getString}
+        getNum={getNum}
+        totalSteps={totalSteps}
+        coloredSteps={coloredSteps}
+        colorAdd={colorAdd}
+        colorDecrease={colorDecrease}
+      />
     </div>
   );
 };
 
-const FirstStep = ({ color, getString, getNum }: StepProps) => {
+const FirstStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -143,20 +205,36 @@ const FirstStep = ({ color, getString, getNum }: StepProps) => {
       transition: { duration: state.duration, repeat: Infinity },
     },
   };
+
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`firstStep ${
-        state.active ? 'firstStepLock' : '' || color ? 'firstStepLock' : ''
+        state.active ? "firstStepLock" : "" || color ? "firstStepLock" : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };
 
-const SecondStep = ({ color, getString, getNum }: StepProps) => {
+const SecondStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -169,6 +247,16 @@ const SecondStep = ({ color, getString, getNum }: StepProps) => {
     active: false,
   });
 
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
+
   let Var: any = {
     animate: {
       width: [state.first, state.final, state.first],
@@ -178,22 +266,28 @@ const SecondStep = ({ color, getString, getNum }: StepProps) => {
 
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`secondStep ${
         state.active
-          ? 'secondStepLock'
-          : '' || color === true
-          ? 'secondStepLock'
-          : ''
+          ? "secondStepLock"
+          : "" || color === true
+          ? "secondStepLock"
+          : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };
 
-const ThirdStep = ({ color, getString, getNum }: StepProps) => {
+const ThirdStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -206,6 +300,16 @@ const ThirdStep = ({ color, getString, getNum }: StepProps) => {
     active: false,
   });
 
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
+
   let Var: any = {
     animate: {
       width: [state.first, state.final, state.first],
@@ -215,22 +319,28 @@ const ThirdStep = ({ color, getString, getNum }: StepProps) => {
 
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`thirdStep ${
         state.active
-          ? 'thirdStepLock'
-          : '' || color === true
-          ? 'thirdStepLock'
-          : ''
+          ? "thirdStepLock"
+          : "" || color === true
+          ? "thirdStepLock"
+          : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };
 
-const FourthStep = ({ color, getString, getNum }: StepProps) => {
+const FourthStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -243,6 +353,16 @@ const FourthStep = ({ color, getString, getNum }: StepProps) => {
     active: false,
   });
 
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
+
   let Var: any = {
     animate: {
       width: [state.first, state.final, state.first],
@@ -252,22 +372,28 @@ const FourthStep = ({ color, getString, getNum }: StepProps) => {
 
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`fourthStep ${
         state.active
-          ? 'fourthStepLock'
-          : '' || color === true
-          ? 'fourthStepLock'
-          : ''
+          ? "fourthStepLock"
+          : "" || color === true
+          ? "fourthStepLock"
+          : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };
 
-const FifthStep = ({ color, getString, getNum }: StepProps) => {
+const FifthStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -280,6 +406,16 @@ const FifthStep = ({ color, getString, getNum }: StepProps) => {
     active: false,
   });
 
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
+
   let Var: any = {
     animate: {
       width: [state.first, state.final, state.first],
@@ -289,21 +425,27 @@ const FifthStep = ({ color, getString, getNum }: StepProps) => {
 
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`fifthStep ${
         state.active
-          ? 'fifthStepLock'
-          : '' || color === true
-          ? 'fifthStepLock'
-          : ''
+          ? "fifthStepLock"
+          : "" || color === true
+          ? "fifthStepLock"
+          : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };
-const SixthStep = ({ color, getString, getNum }: StepProps) => {
+const SixthStep = ({
+  color,
+  getString,
+  getNum,
+  colorAdd,
+  colorDecrease,
+}: StepProps) => {
   const [state, setState] = React.useState<{
     first: string;
     final: string;
@@ -323,19 +465,29 @@ const SixthStep = ({ color, getString, getNum }: StepProps) => {
     },
   };
 
+  function changeState() {
+    if (state.active === false) {
+      setState({ ...state, active: true });
+      colorAdd();
+    } else {
+      setState({ ...state, active: false });
+      colorDecrease();
+    }
+  }
+
   return (
     <motion.div
-      id={'initialOne'}
-      animate={'animate'}
+      id={"initialOne"}
+      animate={"animate"}
       variants={Var}
       className={`sixthStep ${
         state.active
-          ? 'sixthStepLock'
-          : '' || color === true
-          ? 'sixthStepLock'
-          : ''
+          ? "sixthStepLock"
+          : "" || color === true
+          ? "sixthStepLock"
+          : ""
       }`}
-      onClick={() => setState({ ...state, active: !state.active })}
+      onClick={() => changeState()}
     ></motion.div>
   );
 };

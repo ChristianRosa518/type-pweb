@@ -175,13 +175,15 @@
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
   pointer-events: none;
 }
 
 .changeAll button {
   padding: 5px 5px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: calc(0.2em + 1vmin);
   color: #ff7f51;
   border-radius: 5px;
@@ -208,7 +210,7 @@
   font-size: calc(0.45em + 3vmin);
   font-weight: 400;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   background-color: transparent;
   border: transparent;
@@ -225,7 +227,7 @@
   color: #4e4e4e;
   pointer-events: all;
   font-size: calc(0.75em + 1vmin);
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
   transition: 0.2s;
 }
 .stepChanger div:hover {
@@ -242,7 +244,7 @@
   font-size: calc(0.45em + 3vmin);
   font-weight: 400;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   background-color: transparent;
   border: transparent;
@@ -254,7 +256,7 @@
   color: #161616;
   pointer-events: all;
   font-size: calc(0.75em + 1vmin);
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
   transition: 4s;
 }
 

@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import styles from './About.module.css';
+import styles from "./About.module.css";
+import Carousel from "./Carousel";
 
 export const About = () => {
   return (
@@ -10,7 +11,7 @@ export const About = () => {
         <p>I think therefor?</p>
       </div>
       <div className={styles.aboutContainer}>
-        <div className={styles.imageContainer}></div>
+        <Carousel />
         <div className={styles.aboutInfoContainer}>
           <div className={styles.whoAm}>
             <h2>Who am I? </h2>
