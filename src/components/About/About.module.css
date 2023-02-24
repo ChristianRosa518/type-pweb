@@ -30,6 +30,7 @@
 }
 
 .aboutContainer {
+  pointer-events: none;
   background-color: #3a3a3a;
   height: 80vh;
   width: 70%;

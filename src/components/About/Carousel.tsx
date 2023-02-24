@@ -75,7 +75,6 @@ function Carousel() {
                 ? `${styles.slide} ${styles.active}`
                 : `${styles.slide}`
             }`}
-            style={{ transform: `translateX(-${current * 100}%)` }}
             key={index}
           >
             {index === current && (
