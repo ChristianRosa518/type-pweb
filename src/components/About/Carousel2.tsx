@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel2.module.css";
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
 import { useSwipeable } from "react-swipeable";
 
@@ -63,18 +64,14 @@ function Carousel2({ children }: Carousel) {
             updateIndex(activeIndex - 1);
           }}
         >
-          <p>
-            <i className={`${styles.imageArrows} ${styles.left}`}></i>
-          </p>
+          <AiOutlineArrowLeft />
         </button>
         <button
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          <p>
-            <i className={`${styles.imageArrows} ${styles.right}`}></i>
-          </p>
+          <AiOutlineArrowRight />
         </button>
       </div>
     </div>

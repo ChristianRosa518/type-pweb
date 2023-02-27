@@ -11,7 +11,6 @@
   pointer-events: none;
   height: 100%;
   width: 100%;
-  background-color: red;
 
   position: relative;
 
@@ -81,52 +80,28 @@
 /* Arrows */
 
 .imageIndicators {
-  background-color: beige;
-  border-radius: 40% 40% 0% 0%;
+  height: 100%;
+  width: 100%;
   pointer-events: all;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 0;
   bottom: 0;
   position: absolute;
   z-index: 22;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
 }
 
 .imageIndicators > button {
-  color: white;
+  /* border: none; */
+  height: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1f1f1f;
+  border: 2px solid #1f1f1f;
+  background-color: #fc8359;
   cursor: pointer;
-  background: none;
-  border: none;
-  padding-top: 8px;
-  padding: 0px 12px;
-  font-size: calc(0.75em + 1vmin);
-  font-family: "Shrikhand", cursive;
-  font-style: normal;
-  border-bottom: 2px solid transparent;
-}
-
-.imageArrows {
-  border: solid rgba(255, 130, 88, 1);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 4px;
-  cursor: pointer;
-  color: blue;
-}
-
-.right {
-  position: absolute;
-  right: 0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.left {
-  transform: rotate(135deg);
-  position: relative;
-  -webkit-transform: rotate(135deg);
+  font-size: calc(1.3em + 1vmin);
 }
