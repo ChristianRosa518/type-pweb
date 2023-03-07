@@ -1,10 +1,9 @@
 import React from "react";
 
 import styles from "./About.module.css";
-import Carousel from "./Carousel";
-import image from "./Carousel2.module.css";
+import image from "./Carousel.module.css";
 //
-import Carousel2, { CarouselChild } from "./Carousel2";
+import Carousel, { CarouselChild } from "./Carousel";
 
 import image1 from "./CarouselImages/image1.jpg";
 import image2 from "./CarouselImages/image2.JPG";
@@ -27,7 +26,7 @@ export const About = () => {
       </div>
       <div className={styles.aboutContainer}>
         {/* <Carousel /> */}
-        <Carousel2>
+        <Carousel>
           <CarouselChild>
             <img
               src={image1}
@@ -105,7 +104,7 @@ export const About = () => {
               className={image.img11}
             ></img>
           </CarouselChild>
-        </Carousel2>
+        </Carousel>
         <div className={styles.aboutInfoContainer}>
           <div className={styles.whoAm}>
             <h2>Who am I? </h2>

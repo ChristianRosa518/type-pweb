@@ -1,5 +1,5 @@
-@import url('https://use.typekit.net/qft2lfv.css');
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url("https://use.typekit.net/qft2lfv.css");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 
 * {
   padding: 0;
@@ -13,7 +13,7 @@
   margin: 0 auto;
   background-color: #1f1f1f;
 
-  z-index: 10;
+  z-index: 10000000000000;
   top: 0;
   position: sticky;
 
@@ -59,7 +59,7 @@
   background-color: transparent;
 
   pointer-events: all;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
   color: #4e4e4e;
@@ -76,7 +76,7 @@
 .navClose {
   color: #fc8359;
   cursor: pointer;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-size: calc(1em + 2vmin);
   position: absolute;
@@ -97,5 +97,52 @@
 @media screen and (max-device-width: 700px) {
   .Navbar ul li a {
     font-size: calc(0.75em + 9vmin);
+    color: red;
+  }
+}
+
+/* LAPTOP LARGE */
+@media screen and (min-width: 1440px) {
+}
+/* LAPTOP */
+@media screen and (min-width: 1024px) {
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .navContainer {
+    width: 87%;
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+  .navContainer {
+    width: 87%;
+  }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+  .navContainer {
+    width: 87%;
+  }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .navContainer {
+    width: 87%;
+  }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+  .navContainer {
+    width: 87%;
   }
 }

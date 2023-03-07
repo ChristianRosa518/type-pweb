@@ -56,6 +56,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.projectContainerMobile {
+  display: none;
+}
 .projectItemContainer {
   position: absolute;
   background-color: #3a3a3a;
@@ -67,6 +71,7 @@
   /* background-color: yellow; */
   overflow: hidden;
   transition: all 0.3s;
+  z-index: 20;
 }
 
 .projectContainer:hover {
@@ -197,11 +202,13 @@
 }
 
 .languageContainer {
-  height: 30%;
+  /* background-color: red; */
+  height: auto;
   width: 100%;
   /* border: 3px solid #fc8359; */
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 .languageTitle {
   height: 30%;
@@ -210,7 +217,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .languageTitle h2 {
   font-family: "Kanit", sans-serif;
@@ -258,4 +265,99 @@
   transition: all 0.3s;
   color: beige;
   border: 2px solid beige;
+}
+
+/* LAPTOP LARGE */
+@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
+}
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+  .project {
+  }
+
+  .languageContainer {
+  }
+
+  .languageContainer ul > li {
+    padding: 4px 9px;
+    border-radius: 8px;
+    font-size: calc(0.4em + 1.1vmin);
+  }
+
+  .projectInsert {
+    font-size: calc(0.4em + 1.8vmin);
+  }
+  .projectDescription p {
+    line-height: 120%;
+    font-size: calc(0.6em + 1.1vmin);
+  }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .projectContainer {
+    width: 85%;
+  }
+
+  .title {
+    width: 85%;
+  }
+
+  .languageContainer {
+  }
+
+  .languageContainer ul > li {
+    padding: 4px 9px;
+    border-radius: 8px;
+    font-size: calc(0.4em + 1.1vmin);
+  }
+
+  .projectInsert {
+    font-size: calc(0.4em + 1.8vmin);
+  }
+  .projectDescription p {
+    line-height: 120%;
+    font-size: calc(0.6em + 1.1vmin);
+  }
+}
+
+@media all and (max-width: 767px) {
+  .projectContainer {
+    display: none;
+  }
+
+  .projectContainerMobile {
+    width: 85%;
+    height: 100vh;
+    position: relative;
+    background-color: #3a3a3a;
+    margin: 0 auto;
+    border-radius: 20px;
+    /* border: 2px solid #ff7f51; */
+    /* background-color: yellow; */
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
 }

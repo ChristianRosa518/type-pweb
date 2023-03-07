@@ -1,94 +1,93 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.css";
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
-import image1 from "./CarouselImages/image1.jpg";
-import image2 from "./CarouselImages/image2.JPG";
-import image3 from "./CarouselImages/image3.JPG";
-import image4 from "./CarouselImages/image4.jpg";
-import image5 from "./CarouselImages/image5.JPG";
-import image6 from "./CarouselImages/image6.jpg";
-import image7 from "./CarouselImages/image8.JPG";
-import image8 from "./CarouselImages/image9.JPG";
-import image9 from "./CarouselImages/image11.JPG";
-import image10 from "./CarouselImages/image13.jpg";
-import image11 from "./CarouselImages/image16.jpg";
+import { useSwipeable } from "react-swipeable";
 
 // Workaround that doesn't require declaration.d.ts edits
 // const image2 = require("./CarouselImages/image2.JPG");
 
-function Carousel() {
-  const [current, setCurrent] = useState<number>(0);
-  const [paused, setPaused] = useState<boolean>(false);
+interface Carousel {
+  children?: React.ReactNode;
+}
 
-  const sliderData = [
-    { image: image10, class: styles.img10 },
-    { image: image1, class: styles.img1 },
-    { image: image2, class: styles.img2 },
-    { image: image3, class: styles.img3 },
-    { image: image4, class: styles.img4 },
-    { image: image5, class: styles.img5 },
-    { image: image6, class: styles.img6 },
-    { image: image7, class: styles.img7 },
-    { image: image8, class: styles.img8 },
-    { image: image9, class: styles.img9 },
-    { image: image11, class: styles.img11 },
-  ];
+function Carousel({ children }: Carousel) {
+  const [activeIndex, setActiveIndex] = useState<number>(9);
+  const [paused, setPaused] = useState<boolean>(true);
 
-  const length: number = sliderData.length;
+  const updateIndex = (newIndex: number) => {
+    if (newIndex < 0) {
+      newIndex = React.Children.count(children) - 1;
+    } else if (newIndex >= React.Children.count(children)) {
+      newIndex = 0;
+    }
+    setActiveIndex(newIndex);
+  };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!paused) nextSlide();
-  //   }, 3000);
-  //   return () => {
-  //     if (interval) {
-  //       clearInterval(interval);
-  //     }
-  //   };
-  // });
+  const handlers = useSwipeable({
+    // unable to use until fix pointer events to go through elements
+    onSwipedLeft: () => updateIndex(activeIndex + 1),
+    onSwipedRight: () => updateIndex(activeIndex - 1),
+  });
 
-  function nextSlide() {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  }
-
-  function previousSlide() {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  }
-
-  if (!Array.isArray(sliderData) || sliderData.length <= 0) {
-    return null;
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) updateIndex(activeIndex + 1);
+    }, 3000);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
 
   return (
-    <div className={styles.carouselContainer}>
-      <div onClick={() => nextSlide()} className={styles.forward}>
-        Hello {current}
+    <div
+      className={styles.carouselHider}
+      {...handlers}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onClick={() => console.log("hi")}
+    >
+      <div
+        className={styles.carouselContainer}
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {/* Copout on child prop because I don't have full depth of typescript */}
+        {React.Children.map(children, (child: any, index: number) => {
+          return React.cloneElement(child, { width: "100%" });
+        })}
       </div>
-      <div onClick={() => previousSlide()} className={styles.backward}>
-        <p></p>
+      <div className={styles.imageIndicators}>
+        <button
+          onClick={() => {
+            updateIndex(activeIndex - 1);
+          }}
+        >
+          <AiOutlineArrowLeft />
+        </button>
+        <button
+          onClick={() => {
+            updateIndex(activeIndex + 1);
+          }}
+        >
+          <AiOutlineArrowRight />
+        </button>
       </div>
-      {sliderData.map((slide, index) => {
-        return (
-          <div
-            className={`${
-              index === current
-                ? `${styles.slide} ${styles.active}`
-                : `${styles.slide}`
-            }`}
-            key={index}
-          >
-            {index === current && (
-              <img
-                src={slide.image}
-                className={slide.class}
-                alt={"Christian Rosa"}
-              />
-            )}
-          </div>
-        );
-      })}
     </div>
   );
 }
+
+interface CarouselChild {
+  children: React.ReactNode;
+}
+
+export const CarouselChild = ({ children }: CarouselChild) => {
+  return (
+    <div className={styles.slide} style={{ width: "100%" }}>
+      {children}
+    </div>
+  );
+};
 
 export default Carousel;

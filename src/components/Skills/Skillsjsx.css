@@ -77,7 +77,7 @@
 
 .skillset {
   color: beige;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
   font-size: calc(1em + 5vmin);
@@ -103,4 +103,48 @@
 .c4:hover {
   transition: all 0.3s;
   color: #ff9062;
+}
+
+/* LAPTOP LARGE */
+@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
+}
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .skills {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  /* Transition to mobile, change orientations */
+  .skills {
+    height: 60vh;
+    width: 85%;
+    flex-direction: column-reverse;
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+  .skills {
+    height: 70vh;
+    width: 85%;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-device-width: 767px) and (max-device-height: 800px) {
+  .skills {
+    height: 60vh;
+    width: 85%;
+    flex-direction: column-reverse;
+  }
 }

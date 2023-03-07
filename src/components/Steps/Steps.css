@@ -284,9 +284,3 @@
   flex-direction: column;
   color: white;
 }
-
-@media screen and (max-device-width: 800px) {
-  .stepChanger {
-    display: none;
-  }
-}

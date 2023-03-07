@@ -1,33 +1,51 @@
-.carouselContainer {
+.carouselHider {
   height: 80%;
   width: 40%;
-  /* background-color: red; */
+  pointer-events: all;
 
-  /* overflow: hidden; */
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
+  overflow: hidden;
   position: relative;
 }
 
-/* Image Sizing */
-
-.carouselContainer img {
+.carouselContainer {
+  pointer-events: none;
   height: 100%;
   width: 100%;
-  background-color: green;
+
+  position: relative;
+
+  /* overflow: hidden; */
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.slide {
+  pointer-events: none;
+  /* background-color: green; */
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.slide img {
+  height: 100%;
+  width: 100%;
   object-fit: none;
 }
+
 .img1 {
   object-position: 20% 50%;
 }
+
 .img2 {
-  object-position: 40% 0%;
+  object-position: 40% 50%;
   zoom: 40%;
 }
 .img3 {
-  object-position: 20% 0%;
+  object-position: 20% 50%;
 }
 .img4 {
   zoom: 70%;
@@ -35,7 +53,7 @@
 .img5 {
 }
 .img6 {
-  object-position: 70% 20%;
+  object-position: 70% 50%;
   zoom: 18%;
 }
 .img7 {
@@ -59,31 +77,31 @@
   zoom: 70%;
 }
 
-.slide {
-  /* opacity: 0; */
-  transition-duration: 1s ease;
-}
-.slide.active {
-  /* opacity: 1; */
-  transition-duration: 1s;
-  /* transform: scale(1); */
+/* Arrows */
+
+.imageIndicators {
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 22;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.forward {
-  height: 10%;
-  width: 10%;
-  bottom: 50;
-  right: 0;
-  background-color: blue;
-  position: absolute;
-  z-index: 2;
-}
-.backward {
-  height: 10%;
-  width: 10%;
-  bottom: 50;
-  left: 0;
-  background-color: green;
-  position: absolute;
-  z-index: 2;
+.imageIndicators > button {
+  /* border: none; */
+  height: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1f1f1f;
+  border: 2px solid #1f1f1f;
+  background-color: #fc8359;
+  cursor: pointer;
+  font-size: calc(1.3em + 1vmin);
 }

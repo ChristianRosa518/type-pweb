@@ -26,7 +26,7 @@
 
 .burger_icon::before,
 .burger_icon::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 30px;
   height: 5px;
@@ -72,7 +72,7 @@
 .logo {
   outline: none;
   pointer-events: all;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 
   font-weight: 700;
   font-style: italic;
@@ -84,16 +84,17 @@
   /* color: rgba(255, 130, 88, 1); */
 }
 .logoMobile {
-  text-shadow: 2px 3px black;
   pointer-events: all;
-  font-family: 'Kanit', sans-serif;
+
+  font-family: "Kanit", sans-serif;
+  font-style: italic;
 
   font-weight: 500;
   display: none;
   font-size: 32px;
   transition: 0.3s;
   cursor: pointer;
-  color: white;
+  color: #fc8359;
   /* color: rgba(255, 130, 88, 1); */
 }
 
@@ -105,13 +106,4 @@
 
 .logoColor {
   /* color: rgba(255, 130, 88, 1); */
-}
-
-@media only screen and (max-device-width: 700px) {
-  .logo {
-    display: none;
-  }
-  .logoMobile {
-    display: inline-block;
-  }
 }
