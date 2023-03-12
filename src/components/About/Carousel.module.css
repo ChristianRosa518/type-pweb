@@ -105,3 +105,245 @@
   cursor: pointer;
   font-size: calc(1.3em + 1vmin);
 }
+
+/* LAPTOP LARGE */
+@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
+}
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+  .img1 {
+    object-position: 20% 50%;
+    zoom: 60%;
+  }
+
+  .img2 {
+    object-position: 40% 50%;
+    zoom: 30%;
+  }
+  .img3 {
+    zoom: 70%;
+    object-position: 20% 50%;
+  }
+  .img4 {
+    zoom: 40%;
+  }
+  .img5 {
+    zoom: 60%;
+  }
+  .img6 {
+    object-position: 70% 50%;
+    zoom: 10%;
+  }
+  .img7 {
+    object-position: 50% 50%;
+    zoom: 15%;
+  }
+  .img8 {
+    object-position: 20% 50%;
+    zoom: 55%;
+  }
+  .img9 {
+    object-position: 50% 50%;
+    zoom: 40%;
+  }
+  .img10 {
+    object-position: 50% 50%;
+    zoom: 150%;
+  }
+  .img11 {
+    object-position: 100% 50%;
+    zoom: 50%;
+  }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .img1 {
+    object-position: 20% 50%;
+    zoom: 50%;
+  }
+
+  .img2 {
+    object-position: 20% 50%;
+    zoom: 25%;
+  }
+  .img3 {
+    zoom: 60%;
+    object-position: 20% 50%;
+  }
+  .img4 {
+    zoom: 35%;
+  }
+  .img5 {
+    zoom: 55%;
+  }
+  .img6 {
+    object-position: 70% 50%;
+    zoom: 10%;
+  }
+  .img7 {
+    object-position: 50% 50%;
+    zoom: 15%;
+  }
+  .img8 {
+    object-position: 20% 50%;
+    zoom: 55%;
+  }
+  .img9 {
+    object-position: 50% 50%;
+    zoom: 40%;
+  }
+  .img10 {
+    object-position: 50% 50%;
+    zoom: 150%;
+  }
+  .img11 {
+    object-position: 100% 50%;
+    zoom: 50%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .carouselHider {
+    height: 70%;
+    width: 100%;
+  }
+
+  .img1 {
+    object-position: 50% 40%;
+    zoom: 60%;
+  }
+
+  .img2 {
+  }
+  .img3 {
+  }
+  .img4 {
+    zoom: 88%;
+    object-position: 70% 50%;
+  }
+  .img5 {
+    zoom: 110%;
+  }
+  .img6 {
+    zoom: 18%;
+  }
+  .img7 {
+    object-position: 50% 30%;
+    zoom: 15%;
+  }
+  .img8 {
+    object-position: 50% 30%;
+    zoom: 55%;
+  }
+  .img9 {
+    object-position: 50% 40%;
+    zoom: 40%;
+  }
+  .img10 {
+    object-position: 50% 50%;
+    zoom: 170%;
+  }
+  .img11 {
+    object-position: 100% 50%;
+    zoom: 90%;
+  }
+  .imageIndicators > button {
+    /* border: none; */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1f1f1f;
+    border: 2px solid #1f1f1f;
+    background-color: #fc8359;
+    cursor: pointer;
+    font-size: calc(1.3em + 1vmin);
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 640px) and (orientation: portrait) {
+  .img1 {
+    object-position: 50% 40%;
+    zoom: 60%;
+  }
+
+  .img2 {
+    zoom: 40%;
+    object-position: 20% 20%;
+  }
+  .img3 {
+    zoom: 98%;
+    object-position: 40% 50%;
+  }
+  .img4 {
+    zoom: 75%;
+    object-position: 50% 50%;
+  }
+  .img5 {
+    zoom: 85%;
+  }
+  .img6 {
+    zoom: 18%;
+  }
+  .img7 {
+    object-position: 50% 30%;
+    zoom: 15%;
+  }
+  .img8 {
+    object-position: 50% 30%;
+    zoom: 55%;
+  }
+  .img9 {
+    object-position: 50% 40%;
+    zoom: 40%;
+  }
+  .img10 {
+    object-position: 50% 50%;
+    zoom: 170%;
+  }
+  .img11 {
+    object-position: 100% 50%;
+    zoom: 70%;
+  }
+}
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .img3 {
+    zoom: 80%;
+    object-position: 40% 0%;
+  }
+  .img4 {
+    zoom: 40%;
+    object-position: 50% 20%;
+  }
+  .img5 {
+    zoom: 70%;
+    object-position: 40% 0%;
+  }
+  .img6 {
+    zoom: 12%;
+    object-position: 70% 50%;
+  }
+  .img8 {
+    object-position: 0% 30%;
+    zoom: 55%;
+  }
+  .img11 {
+    object-position: 80% 50%;
+    zoom: 53%;
+  }
+}
+
+@media screen and (max-device-width: 320px) and (orientation: portrait) {
+}
+@media screen and (max-device-width: 767px) and (max-device-height: 800px) {
+}
+
+/* ADD HEIGHTS AS YOU SEE FIT */
+@media screen and (max-device-width: 640px) and (max-device-height: 800px) {
+}
+@media screen and (max-device-width: 480px) and (max-device-height: 800px) {
+}
+@media screen and (max-device-width: 320px) and (max-device-height: 800px) {
+}

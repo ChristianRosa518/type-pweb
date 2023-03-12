@@ -12,8 +12,8 @@ interface Carousel {
 }
 
 function Carousel({ children }: Carousel) {
-  const [activeIndex, setActiveIndex] = useState<number>(9);
-  const [paused, setPaused] = useState<boolean>(true);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [paused, setPaused] = useState<boolean>(false);
 
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
@@ -66,6 +66,8 @@ function Carousel({ children }: Carousel) {
         >
           <AiOutlineArrowLeft />
         </button>
+        {/* for media queries. */}
+        {activeIndex}
         <button
           onClick={() => {
             updateIndex(activeIndex + 1);

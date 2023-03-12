@@ -271,5 +271,23 @@
     padding: 8px;
   }
 }
-@media screen and (max-device-width: 320px) and (max-device-height: 800px) {
+@media screen and (max-device-width: 320px) and (max-device-height: 600px) {
+  .skillSelect ul {
+    gap: 2px;
+  }
+  .skillDescription ul {
+    gap: 6px;
+  }
+  .skillDescription ul li {
+    padding: 2px 4px;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(0.4em + 1.2vmin);
+  }
+  .skillSelect li {
+    width: auto;
+    font-size: calc(0.4em + 1.2vmin);
+    cursor: pointer;
+    padding: 8px;
+  }
 }
