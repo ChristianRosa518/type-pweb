@@ -138,7 +138,24 @@
 }
 
 /* ADD HEIGHTS AS YOU SEE FIT */
-@media screen and (max-device-width: 640px) and (max-device-height: 800px) {
+@media screen and (max-device-width: 640px) and (max-device-height: 500px) {
+  .aboutInfoContainer h2 {
+    color: beige;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+    font-size: calc(1em + 0.6vmin);
+    line-height: 0.8em;
+  }
+
+  .aboutInfoContainer p {
+    line-height: 120%;
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(0.5em + 0.6vmin);
+    /* color: #fc8359; */
+    color: #fc8359;
+  }
 }
 @media screen and (max-device-width: 480px) and (max-device-height: 800px) {
 }

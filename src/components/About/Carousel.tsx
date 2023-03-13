@@ -13,7 +13,7 @@ interface Carousel {
 
 function Carousel({ children }: Carousel) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [paused, setPaused] = useState<boolean>(false);
+  const [paused, setPaused] = useState<boolean>(true);
 
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
