@@ -129,11 +129,11 @@
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
+@media screen and (max-device-width: 480px) {
 }
 
 /* For Mobile Landscape View */
-@media screen and (max-device-width: 640px) and (orientation: landscape) {
+@media screen and (max-device-width: 640px) {
   .skills {
     height: 70vh;
     width: 85%;

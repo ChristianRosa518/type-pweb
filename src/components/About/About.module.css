@@ -129,10 +129,10 @@
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
+@media screen and (max-device-width: 480px) {
 }
 
-@media screen and (max-device-width: 320px) and (orientation: portrait) {
+@media screen and (max-device-width: 320px) {
 }
 @media screen and (max-device-width: 767px) and (max-device-height: 800px) {
 }

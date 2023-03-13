@@ -13,7 +13,7 @@
   margin: 0 auto;
   background-color: #1f1f1f;
 
-  z-index: 10000000000000;
+  z-index: 1000;
   top: 0;
   position: sticky;
 
@@ -44,7 +44,7 @@
   height: calc(var(--vh, 1vh) * 100);
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 2000;
 }
 
 .burgerDrop li {
@@ -113,23 +113,36 @@
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
+@media screen and (max-device-width: 480px) {
   .navContainer {
-    width: 87%;
+    width: 85%;
   }
 }
 
 /* For Mobile Landscape View */
-@media screen and (max-device-width: 640px) and (orientation: landscape) {
+@media screen and (max-device-width: 640px) {
   .navContainer {
-    width: 87%;
+    width: 85%;
   }
 }
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
   .navContainer {
-    width: 87%;
+    width: 85%;
+  }
+}
+
+@media screen and (max-device-width: 767px) and (max-device-height: 500px) {
+  .Navbar {
+    height: calc(var(--vh, 1vh) * 10);
+    background-color: #1f1f1f;
+  }
+}
+@media screen and (max-device-width: 767px) and (max-device-height: 300px) {
+  .Navbar {
+    height: calc(var(--vh, 1vh) * 12);
+    background-color: #1f1f1f;
   }
 }
 

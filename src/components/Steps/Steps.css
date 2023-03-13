@@ -142,8 +142,7 @@
   top: 0;
   left: 0;
   height: calc(var(--vh, 1vh) * 9);
-  width: 10vw;
-  /* background-color: white; */
+  width: 10%;
   color: black;
   display: flex;
   justify-content: center;
@@ -156,8 +155,7 @@
   top: 0;
   left: 0;
   height: calc(var(--vh, 1vh) * 9);
-  width: 10vw;
-  /* background-color: white; */
+  width: 10%;
   color: black;
   display: flex;
   justify-content: center;
@@ -167,11 +165,10 @@
 .changeAll {
   z-index: 2;
   position: absolute;
-  height: 9vh;
-  width: 10vw;
-  top: 9vh;
+  height: calc(var(--vh, 1vh) * 9);
+  width: 10%;
+  top: 6vh;
   left: 0;
-  /* background-color: blue; */
 
   display: flex;
   justify-content: center;
@@ -283,4 +280,150 @@
   align-content: center;
   flex-direction: column;
   color: white;
+}
+
+/* LAPTOP LARGE */
+@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
+  .stepChanger {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 9);
+    width: 10%;
+  }
+  .stepChangerLock {
+    pointer-events: none;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 9);
+    width: 10%;
+  }
+
+  .changeAll {
+    z-index: 2;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 9);
+    width: 10%;
+    top: 6vh;
+    left: 0;
+    gap: 10px;
+  }
+}
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .stepChanger {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 7);
+    width: 20%;
+  }
+  .stepChangerLock {
+    pointer-events: none;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 7);
+    width: 20%;
+  }
+
+  .changeAll {
+    z-index: 2;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 7);
+    width: 20%;
+    top: 7vh;
+    left: 0;
+    gap: 10px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .stepChanger {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 7);
+    width: 20%;
+  }
+  .stepChangerLock {
+    pointer-events: none;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 7);
+    width: 20%;
+  }
+
+  .changeAll {
+    z-index: 2;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 5);
+    width: 20%;
+    top: 5vh;
+    left: 0;
+    gap: 10px;
+  }
+  /* Transition to mobile, change orientations */
+}
+
+@media all and (max-height: 550px) {
+  .stepChanger {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 12);
+    width: 20%;
+  }
+  .stepChangerLock {
+    pointer-events: none;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 12);
+    width: 20%;
+  }
+
+  .changeAll {
+    z-index: 2;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 12);
+    width: 20%;
+    top: 9vh;
+    left: 0;
+    gap: 10px;
+  }
+  /* Transition to mobile, change orientations */
+}
+@media screen and (max-device-width: 640px) {
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) {
+}
+
+@media screen and (max-device-width: 320px) {
+}
+@media screen and (max-device-width: 767px) and (max-device-height: 800px) {
+}
+
+/* ADD HEIGHTS AS YOU SEE FIT */
+@media screen and (max-device-width: 640px) and (max-device-height: 800px) {
+}
+@media screen and (max-device-width: 480px) and (max-device-height: 800px) {
+}
+@media screen and (max-device-width: 320px) and (max-device-height: 800px) {
 }
