@@ -78,9 +78,8 @@
 .aboutInfoContainer p {
   line-height: 120%;
   font-family: "Montserrat", sans-serif;
-  font-size: calc(1em + 1vmin);
+  font-style: italic;
   font-size: calc(0.6em + 1.5vmin);
-  /* color: #fc8359; */
   color: #fc8359;
 }
 

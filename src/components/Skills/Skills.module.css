@@ -78,6 +78,7 @@
 
   font-family: "Montserrat", sans-serif;
   font-size: calc(0.4em + 1.5vmin);
+  font-style: italic;
   /* background-color: white; */
 }
 
@@ -167,13 +168,6 @@
   transition: all 0.3s;
   color: beige;
   border: 2px solid beige;
-}
-
-/* LAPTOP LARGE */
-@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
-}
-/* LAPTOP */
-@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
 }
 
 /* For Tablet View */
