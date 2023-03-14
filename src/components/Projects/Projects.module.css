@@ -36,7 +36,7 @@
 
 .title p {
   font-family: "Montserrat", sans-serif;
-
+  font-style: italic;
   font-size: calc(1em + 1vmin);
   /* color: #fc8359; */
   color: #fc8359;
@@ -342,5 +342,25 @@
   }
 }
 
-@media screen and (max-device-width: 767px) and (max-device-height: 500px) {
+@media screen and (max-device-width: 767px) {
+  .title h2 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+    font-size: calc(1em + 3vmin);
+    line-height: 1.1em;
+
+    /* color: #fc8359; */
+    color: beige;
+  }
+
+  .title p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: calc(1em + 0.6vmin);
+    /* color: #fc8359; */
+    color: #fc8359;
+  }
 }

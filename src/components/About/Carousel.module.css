@@ -106,11 +106,8 @@
   font-size: calc(1.3em + 1vmin);
 }
 
-/* LAPTOP LARGE */
-@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
-}
 /* LAPTOP */
-@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .img1 {
     object-position: 20% 50%;
     zoom: 60%;
@@ -157,7 +154,7 @@
 }
 
 /* For Tablet View */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .img1 {
     object-position: 20% 50%;
     zoom: 50%;
@@ -214,10 +211,6 @@
     zoom: 60%;
   }
 
-  .img2 {
-  }
-  .img3 {
-  }
   .img4 {
     zoom: 88%;
     object-position: 70% 50%;
@@ -262,7 +255,7 @@
   }
 }
 
-@media screen and (max-device-width: 767px) and (max-device-height: 500px) {
+@media screen and (max-width: 767px) and (max-height: 500px) {
   .img1 {
     object-position: 50% 40%;
     zoom: 30%;
@@ -308,7 +301,7 @@
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-device-width: 640px) {
+@media screen and (max-width: 640px) {
   .img1 {
     object-position: 50% 40%;
     zoom: 60%;
@@ -353,7 +346,7 @@
     zoom: 70%;
   }
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-width: 480px) {
   .img3 {
     zoom: 80%;
     object-position: 40% 0%;
@@ -378,17 +371,4 @@
     object-position: 80% 50%;
     zoom: 53%;
   }
-}
-
-@media screen and (max-device-width: 320px) {
-}
-@media screen and (max-device-width: 767px) and (max-device-height: 800px) {
-}
-
-/* ADD HEIGHTS AS YOU SEE FIT */
-@media screen and (max-device-width: 640px) and (max-device-height: 800px) {
-}
-@media screen and (max-device-width: 480px) and (max-device-height: 800px) {
-}
-@media screen and (max-device-width: 320px) and (max-device-height: 800px) {
 }
