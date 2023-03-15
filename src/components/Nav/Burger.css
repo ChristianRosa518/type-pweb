@@ -158,11 +158,3 @@
     font-size: 20px;
   }
 }
-
-/* ADD HEIGHTS AS YOU SEE FIT */
-@media screen and (max-device-width: 640px) and (max-device-height: 800px) {
-}
-@media screen and (max-device-width: 480px) and (max-device-height: 800px) {
-}
-@media screen and (max-device-width: 320px) and (max-device-height: 800px) {
-}

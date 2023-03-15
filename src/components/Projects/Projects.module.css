@@ -11,7 +11,7 @@
 }
 
 .title {
-  height: calc(var(--vh, 1vh) * 25);
+  height: 25vh;
   height: 25svh;
 
   width: 70%;
@@ -49,7 +49,7 @@
 .projectContainer {
   position: relative;
   background-color: #3a3a3a;
-  height: calc(var(--vh, 1vh) * 80);
+  height: 80vh;
   height: 80svh;
 
   width: 70%;
@@ -85,7 +85,7 @@
   transition: all 0.3s;
 }
 .projectTitle {
-  height: calc(var(--vh, 1vh) * 8);
+  height: 8vh;
   width: 100%;
   /* background-color: blue; */
 
@@ -106,7 +106,7 @@
 }
 
 .project {
-  height: calc(var(--vh, 1vh) * 60);
+  height: 60vh;
   height: 60svh;
 
   width: 100%;
@@ -165,7 +165,7 @@
 }
 
 .projectButtons {
-  height: calc(var(--vh, 1vh) * 8);
+  height: 8vh;
   height: 8svh;
 
   width: 100%;
@@ -338,7 +338,7 @@
 
   .projectContainerMobile {
     width: 85%;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
     height: 100svh;
 
     position: relative;

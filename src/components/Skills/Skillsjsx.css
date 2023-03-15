@@ -122,7 +122,7 @@
 @media all and (max-width: 767px) {
   /* Transition to mobile, change orientations */
   .skills {
-    height: calc(var(--vh, 1vh) * 60);
+    height: 60vh;
     height: 60svh;
 
     width: 85%;
