@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --vh: 0px;
+}
+
 body {
   background-color: #282828;
 }

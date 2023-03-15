@@ -11,7 +11,9 @@
 }
 
 .title {
-  height: 25vh;
+  height: calc(var(--vh, 1vh) * 25);
+  height: 25svh;
+
   width: 70%;
   margin: 0 auto;
   /* background-color: blue; */
@@ -26,6 +28,7 @@
   font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
+  text-align: center;
 
   font-size: calc(1em + 4vmin);
   line-height: 1.1em;
@@ -38,6 +41,7 @@
   font-family: "Montserrat", sans-serif;
   font-style: italic;
   font-size: calc(1em + 1vmin);
+  text-align: center;
   /* color: #fc8359; */
   color: #fc8359;
 }
@@ -45,7 +49,9 @@
 .projectContainer {
   position: relative;
   background-color: #3a3a3a;
-  height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
+  height: 80svh;
+
   width: 70%;
   margin: 0 auto;
   border-radius: 20px;
@@ -79,7 +85,7 @@
   transition: all 0.3s;
 }
 .projectTitle {
-  height: 8vh;
+  height: calc(var(--vh, 1vh) * 8);
   width: 100%;
   /* background-color: blue; */
 
@@ -100,7 +106,9 @@
 }
 
 .project {
-  height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);
+  height: 60svh;
+
   width: 100%;
   /* background-color: blue; */
 
@@ -157,7 +165,9 @@
 }
 
 .projectButtons {
-  height: 8vh;
+  height: calc(var(--vh, 1vh) * 8);
+  height: 8svh;
+
   width: 100%;
   /* background-color: blue; */
 
@@ -328,7 +338,9 @@
 
   .projectContainerMobile {
     width: 85%;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: 100svh;
+
     position: relative;
     background-color: #3a3a3a;
     margin: 0 auto;

@@ -122,7 +122,9 @@
 @media all and (max-width: 767px) {
   /* Transition to mobile, change orientations */
   .skills {
-    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
+    height: 60svh;
+
     width: 85%;
     flex-direction: column-reverse;
   }

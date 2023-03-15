@@ -1,7 +1,7 @@
-import styles from './Skills.module.css';
-import './Skillsjsx.css';
+import styles from "./Skills.module.css";
+import "./Skillsjsx.css";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Skills() {
   const [skills, setSkills] = useState<number>(0);
@@ -13,41 +13,41 @@ export default function Skills() {
         <p>I can do this, I can do that</p>
       </div>
       <div
-        className={`skills ${skills === 0 ? 'b0' : ''}${
-          skills === 1 ? 'b1' : ''
-        }${skills === 2 ? 'b2' : ''}${skills === 3 ? 'b3' : ''}${
-          skills === 4 ? 'b4' : ''
+        className={`skills ${skills === 0 ? "b0" : ""}${
+          skills === 1 ? "b1" : ""
+        }${skills === 2 ? "b2" : ""}${skills === 3 ? "b3" : ""}${
+          skills === 4 ? "b4" : ""
         }`}
       >
         <div className={styles.skillSelect}>
           <ul>
             <li
               onClick={() => setSkills(0)}
-              className={`list ${skills === 0 ? 'active0' : ''}`}
+              className={`list ${skills === 0 ? "active0" : ""}`}
             >
               Technical
             </li>
             <li
               onClick={() => setSkills(1)}
-              className={`list ${skills === 1 ? 'active1' : ''}`}
+              className={`list ${skills === 1 ? "active1" : ""}`}
             >
               Languages
             </li>
             <li
               onClick={() => setSkills(2)}
-              className={`list ${skills === 2 ? 'active2' : ''}`}
+              className={`list ${skills === 2 ? "active2" : ""}`}
             >
               Third-Party Apis
             </li>
             <li
               onClick={() => setSkills(3)}
-              className={`list ${skills === 3 ? 'active3' : ''}`}
+              className={`list ${skills === 3 ? "active3" : ""}`}
             >
               Tools
             </li>
             <li
               onClick={() => setSkills(4)}
-              className={`list ${skills === 4 ? 'active4' : ''}`}
+              className={`list ${skills === 4 ? "active4" : ""}`}
             >
               Project Management
             </li>
@@ -56,10 +56,10 @@ export default function Skills() {
         <div className={styles.skillDescription}>
           <section>
             <h2
-              className={`skillset ${skills === 0 ? 'c0' : ''}${
-                skills === 1 ? 'c1' : ''
-              }${skills === 2 ? 'c2' : ''}${skills === 3 ? 'c3' : ''}${
-                skills === 4 ? 'c4' : ''
+              className={`skillset ${skills === 0 ? "c0" : ""}${
+                skills === 1 ? "c1" : ""
+              }${skills === 2 ? "c2" : ""}${skills === 3 ? "c3" : ""}${
+                skills === 4 ? "c4" : ""
               }`}
             >
               Skills
@@ -80,6 +80,7 @@ export default function Skills() {
               <ul className={styles.d1}>
                 <li>HTML(5)</li>
                 <li>CSS(3)</li>
+                <li>Java</li>
                 <li>JavaScript</li>
                 <li>TypeScript</li>
                 <li>Python</li>

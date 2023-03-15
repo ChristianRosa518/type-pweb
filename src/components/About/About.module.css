@@ -1,5 +1,6 @@
 .title {
-  height: 25vh;
+  height: calc(var(--vh, 1vh) * 25);
+  height: 25svh;
   width: 70%;
   margin: 0 auto;
   /* background-color: blue; */
@@ -33,7 +34,8 @@
 .aboutContainer {
   pointer-events: none;
   background-color: #3a3a3a;
-  height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
+  height: 80svh;
   width: 70%;
   margin: 0 auto;
   border-radius: 20px;
