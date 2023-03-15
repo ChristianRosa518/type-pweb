@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  height: 100%;
   height: 100svh;
 
   width: 100%;
@@ -85,7 +85,7 @@
 }
 
 .title {
-  height: 25vh;
+  height: 25%;
   height: 25svh;
 
   width: 70%;
@@ -204,7 +204,7 @@
   }
   /* Transition to mobile, change orientations */
   .container {
-    height: 100vh;
+    height: 100%;
     height: 100svh;
   }
   .skillSelect {

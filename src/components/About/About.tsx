@@ -19,7 +19,7 @@ import image11 from "./CarouselImages/image16.jpg";
 
 export const About = () => {
   return (
-    <div>
+    <>
       <div className={styles.title}>
         <h2>About</h2>
         <p>I think therefor?</p>
@@ -122,6 +122,6 @@ export const About = () => {
           <div className={styles.filler}></div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

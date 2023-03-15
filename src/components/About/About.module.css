@@ -1,5 +1,5 @@
 .title {
-  height: 25vh;
+  height: 25%;
   height: 25svh;
   width: 70%;
   margin: 0 auto;
@@ -34,7 +34,7 @@
 .aboutContainer {
   pointer-events: none;
   background-color: #3a3a3a;
-  height: 80vh;
+  height: 80%;
   height: 80svh;
   width: 70%;
   margin: 0 auto;

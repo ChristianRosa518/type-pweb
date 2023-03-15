@@ -13,14 +13,14 @@ function App() {
 
   function appHeight() {
     const doc = document.documentElement;
-    doc.style.setProperty("--vho", window.innerHeight * 0.01 + "px");
+    doc.style.setProperty("--vho", `${window.innerHeight}px`);
   }
 
   window.addEventListener("resize", appHeight);
   appHeight();
 
   return (
-    <div>
+    <>
       <BurgerMenu open={open} setOpen={setOpen} />
       <Home />
       <Navbar open={open} setOpen={setOpen} />
@@ -29,7 +29,7 @@ function App() {
         <Projects />
         <Skills />
       </div>
-    </div>
+    </>
   );
 }
 

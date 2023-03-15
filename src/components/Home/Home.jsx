@@ -75,7 +75,7 @@ export default function Home() {
   }
 
   return (
-    <section className={styles.home}>
+    <div className={styles.home}>
       <StepContainer
         Count={stepCount}
         color={color}
@@ -122,6 +122,6 @@ export default function Home() {
           />
         </p>
       </div>
-    </section>
+    </div>
   );
 }
