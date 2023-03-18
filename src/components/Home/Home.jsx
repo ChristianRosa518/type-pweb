@@ -105,7 +105,7 @@ export default function Home() {
             : ""
         }`}
       >
-        <h1>Your next</h1>
+        <h1>Your next test</h1>
         <p>
           &nbsp;
           <Typewriter
