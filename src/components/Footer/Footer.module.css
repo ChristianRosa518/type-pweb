@@ -1,0 +1,22 @@
+.container {
+  height: 15%;
+  height: 30svh;
+
+  width: 100%;
+  background-color: #1f1f1f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: calc(1em + 1vmin);
+  /* color: #fc8359; */
+  color: #fc8359;
+  text-align: center;
+}
