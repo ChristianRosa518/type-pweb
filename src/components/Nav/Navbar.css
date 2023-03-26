@@ -43,7 +43,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: calc(var(--vho, 1vh) * 100);
+  height: 100%;
+  height: 100vh;
+  height: 100dvh;
   top: 0;
   width: 100%;
   z-index: 2000;

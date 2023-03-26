@@ -13,14 +13,6 @@ import "./App.css";
 function App() {
   const [open, setOpen] = React.useState<boolean>(false);
 
-  function appHeight() {
-    const doc = document.documentElement;
-    doc.style.setProperty("--vho", window.innerHeight * 0.01 + "px");
-  }
-
-  window.addEventListener("resize", appHeight);
-  appHeight();
-
   return (
     <>
       <BurgerMenu open={open} setOpen={setOpen} />

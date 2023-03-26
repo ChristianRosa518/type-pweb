@@ -50,7 +50,7 @@
 
 .projectContainer {
   position: relative;
-  background-color: #3a3a3a;
+  background-color: #fe7f4c;
   height: 80%;
   height: 80svh;
 
@@ -83,17 +83,18 @@
 }
 
 .projectContainer:hover {
-  box-shadow: 3px 3px 2px #fc8359;
+  /* box-shadow: 3px 3px 2px #be3f16; */
   transition: all 0.3s;
 }
 .projectTitle {
-  height: 8vh;
+  height: 12%;
   width: 100%;
-  /* background-color: blue; */
 
   display: flex;
   justify-content: center;
   align-items: center;
+  word-wrap: break-word;
+  text-align: center;
 }
 
 .projectTitle h2 {
@@ -108,11 +109,9 @@
 }
 
 .project {
-  height: 60%;
-  height: 60svh;
+  height: 76%;
 
   width: 100%;
-  /* background-color: blue; */
 
   display: flex;
   justify-content: center;
@@ -167,11 +166,8 @@
 }
 
 .projectButtons {
-  height: 8%;
-  height: 8svh;
-
+  height: 12%;
   width: 100%;
-  /* background-color: blue; */
 
   display: flex;
   justify-content: center;
@@ -214,13 +210,12 @@
 }
 
 .languageContainer {
-  /* background-color: red; */
-  height: auto;
+  height: 35%;
   width: 100%;
   /* border: 3px solid #fc8359; */
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  gap: 5px;
 }
 .languageTitle {
   height: 30%;
@@ -228,28 +223,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 20px;
 }
 .languageTitle h2 {
+  /* background-color: red; */
+  height: 70%;
   font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: italic;
-  line-height: 70%;
-  /* letter-spacing: 1px; */
 
   font-size: calc(0.4em + 1.8vmin);
   color: beige;
-  padding: 8px;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
 }
 
 .active {
   border-bottom: 2px solid beige !important;
 }
+
 .languageContainer > ul {
-  height: auto;
+  height: 70%;
   width: 100%;
   display: flex;
   /* justify-content: baseline; */
@@ -315,9 +308,6 @@
     width: 85%;
   }
 
-  .languageContainer {
-  }
-
   .languageContainer ul > li {
     padding: 4px 9px;
     border-radius: 8px;
@@ -344,11 +334,9 @@
     height: 100svh;
 
     position: relative;
-    background-color: #3a3a3a;
+    background-color: #fe7f4c;
     margin: 0 auto;
     border-radius: 20px;
-    /* border: 2px solid #ff7f51; */
-    /* background-color: yellow; */
     overflow: hidden;
     transition: all 0.3s;
     display: flex;
@@ -376,5 +364,134 @@
     font-size: calc(1em + 0.6vmin);
     /* color: #fc8359; */
     color: #fc8359;
+  }
+
+  .projectItemContainer {
+    /* background-color: rgb(70, 8, 8); */
+    transition: 0.3s;
+  }
+
+  .project {
+    flex-direction: column;
+    /* background-color: red; */
+    height: 78%;
+    transition: 0.3s;
+  }
+
+  .projectTitle h2 {
+    font-size: calc(1em + 1.5vmin);
+  }
+
+  .projectLogo {
+    height: 40%;
+  }
+
+  .projectDescription {
+    height: 60%;
+    width: 90%;
+    /* background-color: blue; */
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s;
+  }
+
+  .projectInsert {
+    /* line-height: 70%; */
+    width: 100%;
+    font-size: calc(0.8em + 1.6vmin);
+    color: #fc8359;
+  }
+
+  .projectDescription p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: calc(0.6em + 1.6vmin);
+
+    color: beige;
+  }
+
+  .languageTitle h2 {
+    height: 100%;
+    font-size: calc(0.6em + 1.8vmin);
+  }
+
+  .languageContainer {
+    gap: 15px;
+  }
+
+  .languageContainer ul {
+    transition: 0.3s;
+    gap: 6px;
+  }
+
+  .languageContainer ul > li {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: calc(0.6em + 1.3vmin);
+  }
+
+  .projectButtons {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 15px;
+  }
+
+  .button,
+  .revButton {
+    padding: 15px 12px;
+    font-size: calc(0.6em + 0.6vmin);
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-width: 480px) {
+  .projectTitle {
+    height: 10vh;
+  }
+  .projectTitle h2 {
+    font-size: calc(1em + 1.2vmin);
+  }
+  .projectButtons {
+    gap: 0px 9px;
+  }
+  .button,
+  .revButton {
+    padding: 9px 6px;
+    font-size: calc(0.6em + 0.4vmin);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .languageTitle h2 {
+    height: 100%;
+    font-size: calc(0.7em + 1.8vmin);
+  }
+  .languageContainer ul > li {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: calc(0.6em + 1vmin);
+  }
+
+  .projectInsert {
+    /* line-height: 70%; */
+    width: 100%;
+    font-size: calc(0.8em + 1.3vmin);
+    color: #fc8359;
+  }
+
+  .projectDescription p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: calc(0.6em + 1.3vmin);
+
+    color: beige;
+  }
+  .button,
+  .revButton {
+    padding: 6px 3px;
+    font-size: calc(0.5em + 0.3vmin);
   }
 }

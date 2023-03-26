@@ -97,10 +97,10 @@ textarea {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: calc(0.6em + 1vmin);
+  font-size: calc(0.6em + 0.9vmin);
   color: black;
   height: 50%;
-  padding: 8px;
+  padding: 4px;
   transition: 0.3s;
 }
 
@@ -177,4 +177,107 @@ select {
 .returnForm {
   height: 100px;
   width: 100px;
+}
+
+/* LAPTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .form,
+  .afterForm {
+    width: 60%;
+  }
+}
+
+/* For Tablet View */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contactContainer {
+    width: 75%;
+  }
+  .form,
+  .afterForm {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  /* Transition to mobile, change orientations */
+  .contactContainer {
+    width: 85%;
+  }
+  .form,
+  .afterForm {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-width: 480px) {
+  .form label {
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(1em + 0.6vmin);
+    font-weight: 700;
+    font-style: italic;
+    color: #ff7f51;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .form,
+  .afterForm {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .container {
+    height: 120%;
+    height: 120svh;
+  }
+  .contactContainer {
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .formItem {
+    width: 50%;
+    height: 17%;
+  }
+  .form {
+    gap: 14px 0px;
+  }
+
+  .form input,
+  select {
+    width: 85%;
+  }
+
+  .formItem label {
+    width: 85%;
+  }
+
+  .formItemMessage {
+    height: 21%;
+  }
+
+  .form label {
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(0.7em + 0.5vmin);
+    font-weight: 700;
+    font-style: italic;
+    color: #ff7f51;
+  }
+}
+
+@media screen and (max-width: 320px) {
+}
+@media screen and (max-width: 767px) and (max-height: 800px) {
+}
+
+/* ADD HEIGHTS AS YOU SEE FIT */
+@media screen and (max-width: 640px) and (max-height: 800px) {
+}
+@media screen and (max-width: 480px) and (max-height: 800px) {
+}
+@media screen and (max-width: 320px) and (max-height: 800px) {
 }

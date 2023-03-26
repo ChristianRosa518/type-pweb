@@ -37,12 +37,12 @@
   cursor: pointer;
   word-wrap: break-word;
 
-  transition: 4s;
+  transition: color 4s;
 }
 
 .heroLock span {
   color: #1f1f1f;
-  transition: 4s;
+  transition: color 4s;
   word-wrap: break-word;
 
   /* text-shadow: 1px 2px 2px #1f1f1f, 1px 2px 2px #1f1f1f; */
