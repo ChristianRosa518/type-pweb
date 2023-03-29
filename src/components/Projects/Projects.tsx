@@ -1,15 +1,18 @@
 import styles from "./Projects.module.css";
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import card from "./Card.module.css";
 
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 
+import SassyProjectLogo from "./Finishedphotos/DesktopSassys.png";
+import TypeProjectLogo from "./Finishedphotos/DesktopPWEB.png";
 import SassyLogo from "./Logo.png";
 
 export default function Projects() {
   const [nully, setnully] = useState<Boolean>(false);
   const [sassy, setSassy] = useState<Boolean>(false);
+  const [vThree, setvThree] = useState<Boolean>(false);
 
   // Tablet and bigger animations
   const initialD = { y: "-150%" };
@@ -22,6 +25,48 @@ export default function Projects() {
   const initialR = { x: "150%" };
   const center = { x: 0 };
 
+  var sassys = {
+    title: "Sassy's Specialty Sandwiches",
+    descriptionTitle: "Sassy's Specialty Sandwiches",
+    description: `Is my first project, Sassy's initially started as a project used to
+    familiarize myself with Html, Css, and Javascript. But eventually
+    transformed into my first e-commerce React project`,
+    apis: [
+      "Stripe",
+      "Google Geocode",
+      "Google Maps",
+      "Framer-Motion",
+      "ScrollSpy",
+    ],
+    languages: ["Html", "Css", "JavaScript", "React", "Node"],
+    cicd: ["Heroku Hosted", "GitHub"],
+    websiteLink: "https://www.sassysbk.com/",
+    githubLink: "https://github.com/ChristianRosa518/sassys-react",
+    image: SassyProjectLogo,
+    mobileImage: "",
+  };
+
+  var v3 = {
+    title: "Personal Website V3",
+    descriptionTitle: "My Personal Website",
+    description: `is something that has gone through as much growth as I have. That's why i've added it here, so you can see the other versions and see how much I, along with my site have grown.`,
+    apis: [
+      "Framer-Motion",
+      "React Interesection Observer",
+      "React-Hook-Form",
+      "EmailJs",
+    ],
+    languages: ["TypeScript", "JavaScript", "Html", "Css", "React"],
+    cicd: ["Github, for i am poor."],
+    websiteLink: "https://christianrosa518.github.io/type-pweb/",
+    githubLink: "https://github.com/ChristianRosa518/type-pweb",
+    image: TypeProjectLogo,
+    mobileImage: "",
+    addLinks: true,
+    v1: "https://christianrosa518.github.io/pWebsite/",
+    v2: "https://christianrosa518.github.io/react-personal-web/",
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -32,7 +77,8 @@ export default function Projects() {
         <ProjectItem
           img={SassyLogo}
           altTag={"sassys"}
-          delay={150}
+          ImgReplace={"none"}
+          delay={850}
           rootMargin={"0px 0px -350px 0px"}
           direction={down}
           initial={initialD}
@@ -42,16 +88,18 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"V3"}
           delay={950}
           direction={down}
           rootMargin={"0px 0px -350px 0px"}
           initial={initialD}
           odd={false}
-          showProject={setnully}
+          showProject={setvThree}
         />
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1350}
           direction={down}
           rootMargin={"0px 0px -350px 0px"}
@@ -62,6 +110,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1750}
           direction={down}
           initial={initialD}
@@ -72,6 +121,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1750}
           direction={down}
           rootMargin={"0px 0px -350px 0px"}
@@ -82,6 +132,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={151}
           direction={up}
           initial={initialU}
@@ -92,6 +143,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={551}
           direction={up}
           rootMargin={"0px 0px -350px 0px"}
@@ -102,6 +154,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={951}
           direction={up}
           initial={initialU}
@@ -112,6 +165,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1351}
           direction={up}
           rootMargin={"0px 0px -350px 0px"}
@@ -122,6 +176,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1751}
           direction={up}
           rootMargin={"0px 0px -350px 0px"}
@@ -130,13 +185,25 @@ export default function Projects() {
           showProject={setnully}
         />
         <AnimatePresence>
-          {sassy && <SassyContainer isActive={setSassy} />}
+          {sassy && (
+            <CardContainer isActive={setSassy} {...sassys}>
+              <CardDesciption {...sassys} />
+            </CardContainer>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {vThree && (
+            <CardContainer isActive={setvThree} {...v3}>
+              <CardDesciption {...v3} />
+            </CardContainer>
+          )}
         </AnimatePresence>
       </div>
       <div className={styles.projectContainerMobile}>
         <ProjectItem
           img={SassyLogo}
           altTag={"sassys"}
+          ImgReplace={"none"}
           delay={150}
           direction={center}
           initial={initialL}
@@ -147,6 +214,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"v3"}
           delay={950}
           direction={center}
           rootMargin={"0px 0px -50px 0px"}
@@ -157,6 +225,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1350}
           direction={center}
           rootMargin={"0px 0px -50px 0px"}
@@ -167,6 +236,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1750}
           direction={center}
           rootMargin={"0px 0px -50px 0px"}
@@ -177,6 +247,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1750}
           rootMargin={"0px 0px -50px 0px"}
           direction={center}
@@ -187,6 +258,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={151}
           direction={center}
           rootMargin={"0px 0px -50px 0px"}
@@ -197,6 +269,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={551}
           rootMargin={"0px 0px -50px 0px"}
           direction={center}
@@ -207,6 +280,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={951}
           rootMargin={"0px 0px -50px 0px"}
           direction={center}
@@ -217,6 +291,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1351}
           rootMargin={"0px 0px -50px 0px"}
           direction={center}
@@ -227,6 +302,7 @@ export default function Projects() {
         <ProjectItem
           img={"none"}
           altTag={"none"}
+          ImgReplace={"none"}
           delay={1751}
           rootMargin={"0px 0px -50px 0px"}
           direction={center}
@@ -235,7 +311,11 @@ export default function Projects() {
           showProject={setnully}
         />
         <AnimatePresence>
-          {sassy && <SassyContainer isActive={setSassy} />}
+          {sassy && (
+            <CardContainer {...sassys} isActive={setSassy}>
+              <CardDesciption {...sassys} />
+            </CardContainer>
+          )}
         </AnimatePresence>
       </div>
     </div>
@@ -245,6 +325,7 @@ export default function Projects() {
 interface cardy {
   altTag: string;
   img: string;
+  ImgReplace: string;
   delay: number;
   direction: object;
   initial: object;
@@ -256,6 +337,7 @@ interface cardy {
 const ProjectItem = ({
   altTag,
   img,
+  ImgReplace,
   delay,
   direction,
   initial,
@@ -281,6 +363,7 @@ const ProjectItem = ({
           onClick={() => showProject(true)}
         >
           <div className={card.imgCon}>
+            {ImgReplace !== "none" && <p>{ImgReplace}</p>}
             {altTag !== "none" && (
               <img className={card.img} src={img} alt={altTag}></img>
             )}
@@ -291,11 +374,26 @@ const ProjectItem = ({
   );
 };
 
-interface SassyProps {
-  isActive: (active: boolean) => void;
+interface CardProps {
+  isActive: Dispatch<SetStateAction<Boolean>>;
+  children: JSX.Element;
+
+  title: string;
+  websiteLink: string;
+  githubLink: string;
+  image?: string;
+  mobileImage?: string;
 }
 
-const SassyContainer = ({ isActive }: SassyProps) => {
+const CardContainer = ({
+  isActive,
+  title,
+  websiteLink,
+  githubLink,
+  image,
+  mobileImage,
+  children,
+}: CardProps) => {
   return (
     <motion.div
       key="sassy"
@@ -305,15 +403,35 @@ const SassyContainer = ({ isActive }: SassyProps) => {
       className={styles.projectItemContainer}
     >
       <div className={styles.projectTitle}>
-        <h2>Sassy's Specialty Sandwiches</h2>
+        <h2>{title}</h2>
       </div>
       <div className={styles.project}>
-        <div className={styles.projectLogo}></div>
-        <SassyDesciption />
+        <div className={styles.projectLogo}>
+          <img
+            src={`${image}`}
+            alt={"yadayada"}
+            className={styles.projectLogoDesktop}
+          ></img>
+        </div>
+        {children}
       </div>
       <div className={styles.projectButtons}>
-        <button className={styles.button}>Website Link</button>
-        <button className={styles.revButton}>Github Link</button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            window.open(`${websiteLink}`, "_blank");
+          }}
+        >
+          Website Link
+        </button>
+        <button
+          className={styles.revButton}
+          onClick={() => {
+            window.open(`${githubLink}`, "_blank");
+          }}
+        >
+          Github Link
+        </button>
         <button className={styles.button} onClick={() => isActive(false)}>
           Other Projects
         </button>
@@ -322,53 +440,72 @@ const SassyContainer = ({ isActive }: SassyProps) => {
   );
 };
 
-const SassyDesciption = () => {
-  const [languages, setLanguages] = React.useState<number>(0);
+interface CardDesProps {
+  descriptionTitle: string;
+  description: string;
+  apis: Array<string>;
+  languages: Array<string>;
+  cicd: Array<string>;
+
+  v2?: string;
+  v1?: string;
+  addLinks?: boolean;
+}
+
+const CardDesciption = ({
+  descriptionTitle,
+  description,
+  apis,
+  languages,
+  cicd,
+  addLinks,
+  v2,
+  v1,
+}: CardDesProps) => {
+  const [active, setActive] = React.useState<number>(0);
 
   return (
     <div className={styles.projectDescription}>
       <div className={styles.languageContainer}>
         <div className={styles.languageTitle}>
           <h2
-            className={`${languages === 1 ? `${styles.active}` : ""}`}
-            onClick={() => setLanguages(1)}
+            className={`${active === 1 ? `${styles.active}` : ""}`}
+            onClick={() => setActive(1)}
           >
             Apis
           </h2>
           <h2
-            className={`${languages === 0 ? `${styles.active}` : ""}`}
-            onClick={() => setLanguages(0)}
+            className={`${active === 0 ? `${styles.active}` : ""}`}
+            onClick={() => setActive(0)}
           >
             Languages
           </h2>
           <h2
-            className={`${languages === 2 ? `${styles.active}` : ""}`}
-            onClick={() => setLanguages(2)}
+            className={`${active === 2 ? `${styles.active}` : ""}`}
+            onClick={() => setActive(2)}
           >
             CI/CD
           </h2>
         </div>
-        {languages === 0 && (
+        {active === 0 && (
           <ul>
-            <li>Html</li>
-            <li>Css</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node</li>
+            {languages.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         )}
-        {languages === 1 && (
+        {active === 1 && (
           <ul>
-            <li>Stripe</li>
-            <li>Google Geocode</li>
-            <li>Google Maps</li>
-            <li>Framer-Motion</li>
+            {apis.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         )}
-        {languages === 2 && (
+        {active === 2 && (
           <ul>
-            <li>Heroku Hosted</li>
-            <li>GitHub</li>
+            {cicd.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         )}
       </div>
@@ -376,11 +513,29 @@ const SassyDesciption = () => {
         <section>
           <p>
             <span className={styles.projectInsert}>
-              Sassy's Specialty Sandwiches&nbsp;
+              {descriptionTitle}&nbsp;
             </span>
-            Is my first project, Sassy's initially started as a project used to
-            familiarize myself with Html, Css, and Javascript. But eventually
-            transformed into my first e-commerce React project
+            {description}
+
+            {addLinks === true && (
+              <div className={styles.projectExtra}>
+                <span
+                  onClick={() => {
+                    window.open(`${v1}`, "_blank");
+                  }}
+                >
+                  Click me for V1
+                </span>
+                <br />
+                <span
+                  onClick={() => {
+                    window.open(`${v2}`, "_blank");
+                  }}
+                >
+                  Click me for V2
+                </span>
+              </div>
+            )}
           </p>
         </section>
       </div>

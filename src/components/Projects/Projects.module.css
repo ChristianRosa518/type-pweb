@@ -123,15 +123,13 @@
   position: relative;
   height: 100%;
   width: 45%;
-  background-image: url("../../../public/images/personal.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.projectLogo img {
+  height: 100%;
+  width: 100%;
+  object-fit: none;
+  zoom: 100%;
 }
 
 .projectDescription {
@@ -163,6 +161,16 @@
   height: 80%;
   width: 100%;
   overflow-y: auto;
+}
+.projectExtra span {
+  color: #fc8359;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.projectExtra span:hover {
+  color: beige;
+  transition: 0.3s;
 }
 
 .projectButtons {
@@ -265,6 +273,7 @@
   transition: all 0.3s;
   color: #ff9062;
   border: 2px solid #ff9062;
+  cursor: pointer;
 }
 .languageContainer ul li:hover {
   transition: all 0.3s;

@@ -4,6 +4,7 @@
   border-radius: 5%;
   overflow: hidden;
   background-color: none;
+  cursor: pointer;
 }
 
 .itemEven {
@@ -32,8 +33,22 @@
 .imgCon {
   height: 70%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* background-color: blue; */
   /* opacity: 0.2; */
+}
+
+.imgCon p {
+  color: white;
+
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+  font-size: calc(1.5em + 5vmin);
+  color: #fe7f4c;
 }
 
 .img {
