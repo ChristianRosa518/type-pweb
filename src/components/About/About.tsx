@@ -17,16 +17,20 @@ import image9 from "./CarouselImages/image11.JPG";
 import image10 from "./CarouselImages/image13.jpg";
 import image11 from "./CarouselImages/image16.jpg";
 
+import personal from "./CarouselImages/personalwebprofile.jpg";
+
 export const About = () => {
   return (
     <>
       <div className={styles.title}>
         <h2>About</h2>
-        <p>I think therefor?</p>
+        <p>A brief summary</p>
       </div>
       <div className={styles.aboutContainer}>
-        {/* <Carousel /> */}
-        <Carousel>
+        <div className={styles.imgContainer}>
+          <img src={personal} alt={"personalprofilepic"}></img>
+        </div>
+        {/* <Carousel>
           <CarouselChild>
             <img
               src={image1}
@@ -104,20 +108,18 @@ export const About = () => {
               className={image.img11}
             ></img>
           </CarouselChild>
-        </Carousel>
+        </Carousel> */}
         <div className={styles.aboutInfoContainer}>
           <div className={styles.whoAm}>
             <h2>Who am I? </h2>
             <p>
-              My name's Christian Rosa, I'm a college student studying for my
-              bachelor's in computer engineering my graduation is expected to be
-              late 2024 and I wish to breakthrough the tech career space before
-              then
+              My name is Christian Rosa. I am a university student and am
+              currently on track to graduate with a Bachelor's of Computer
+              Engineering in spring, 2024. Before I graduate, I hope to break
+              into the tech space as a Frontend Developer.
             </p>
-            <p>
-              My curent goal is to become a Full Stack Software Engineer, but
-              i'm currently pursuing work experience as a Front End Engineer.
-            </p>
+            <br></br>
+            <p>Or at least before chat-gpt out phases us all.</p>
           </div>
           <div className={styles.filler}></div>
         </div>

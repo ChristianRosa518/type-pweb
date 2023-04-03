@@ -39,7 +39,7 @@
 
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   font-size: calc(0.4em + 2.2vmin);
 
   cursor: pointer;
@@ -65,7 +65,7 @@
 .skillDescription ul h2 {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   line-height: 1.1em;
 }
@@ -80,7 +80,7 @@
 
   font-family: "Montserrat", sans-serif;
   font-size: calc(0.4em + 1.5vmin);
-  font-style: italic;
+  font-style: normal;
   /* background-color: white; */
 }
 
@@ -101,7 +101,7 @@
 .title h2 {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   font-size: calc(1em + 4vmin);
   line-height: 1.1em;
@@ -183,14 +183,8 @@
 
 @media all and (max-width: 767px) {
   .title h2 {
-    font-family: "Kanit", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-
     font-size: calc(1em + 3vmin);
     line-height: 1.1em;
-
-    /* color: #fc8359; */
     color: beige;
   }
 

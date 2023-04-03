@@ -1,12 +1,13 @@
 .home {
-  height: 100%;
-  height: 100svh;
+  height: 93%;
+  height: 93svh;
 
   width: 100%;
 
   position: relative;
 
   background-color: black;
+  overflow: hidden;
 }
 
 .hero {
@@ -51,7 +52,7 @@
 .hero p,
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-size: calc(1em + 4vmin);
   color: beige;
   pointer-events: none;
@@ -78,5 +79,17 @@ h1 {
   }
   .hero span {
     font-size: calc(1em + 2vmin);
+  }
+}
+@media screen and (max-width: 767px) and (max-height: 500px) {
+  .home {
+    height: 90%;
+    height: 90svh;
+  }
+}
+@media screen and (max-width: 767px) and (max-height: 300px) {
+  .home {
+    height: 88%;
+    height: 88svh;
   }
 }

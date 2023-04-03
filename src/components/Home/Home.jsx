@@ -85,7 +85,7 @@ export default function Home() {
         totalSteps={totalSteps}
         coloredSteps={coloredSteps}
       />
-      <StepChanger
+      {/* <StepChanger
         clear={clear}
         color={color}
         textColor={textColor}
@@ -95,7 +95,7 @@ export default function Home() {
         addChild={onAddChild}
         colorStepAdd={colorStepAdd}
         colorDecrease={colorDecrease}
-      />
+      /> */}
       <div
         className={`${styles.hero} ${
           color
@@ -111,13 +111,13 @@ export default function Home() {
           <Typewriter
             words={[
               "Front End Developer",
-              "Fullstack Software Engineer",
-              "Back End Engineer",
-              "Front End Engineer",
-              "Fullstack Developer",
-              "Back End Developer",
+              // "Fullstack Software Engineer",
+              // "Back End Engineer",
+              // "Front End Engineer",
+              // "Fullstack Developer",
+              // "Back End Developer",
             ]}
-            loop={false}
+            loop={1}
             delaySpeed={2500}
           />
         </p>

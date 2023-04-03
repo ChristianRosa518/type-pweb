@@ -5,8 +5,14 @@ import card from "./Card.module.css";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 
-import SassyProjectLogo from "./Finishedphotos/DesktopSassys.png";
-import TypeProjectLogo from "./Finishedphotos/DesktopPWEB.png";
+import SassyProjectLogoDesktop from "./Finishedphotos/DesktopSassys.png";
+import SassyProjectLogoLaptop from "./Finishedphotos/LaptopSassys.png";
+import SassyProjectLogoTablet from "./Finishedphotos/SASSYSTABLET.png";
+import SassyProjectLogoMobile from "./Finishedphotos/sassymobile.png";
+import TypeProjectLogoDesktop from "./Finishedphotos/DesktopPWEB.png";
+import TypeProjectLogoLaptop from "./Finishedphotos/LaptopPWEB.png";
+import TypeProjectLogoTablet from "./Finishedphotos/TABLETPWEB.png";
+import TypeProjectLogoMobile from "./Finishedphotos/pwebmobile.png";
 import SassyLogo from "./Logo.png";
 
 export default function Projects() {
@@ -42,7 +48,10 @@ export default function Projects() {
     cicd: ["Heroku Hosted", "GitHub"],
     websiteLink: "https://www.sassysbk.com/",
     githubLink: "https://github.com/ChristianRosa518/sassys-react",
-    image: SassyProjectLogo,
+    image: SassyProjectLogoDesktop,
+    image2: SassyProjectLogoLaptop,
+    image3: SassyProjectLogoTablet,
+    image4: SassyProjectLogoMobile,
     mobileImage: "",
   };
 
@@ -60,12 +69,40 @@ export default function Projects() {
     cicd: ["Github, for i am poor."],
     websiteLink: "https://christianrosa518.github.io/type-pweb/",
     githubLink: "https://github.com/ChristianRosa518/type-pweb",
-    image: TypeProjectLogo,
+    image: TypeProjectLogoDesktop,
+    image2: TypeProjectLogoLaptop,
+    image3: TypeProjectLogoTablet,
+    image4: TypeProjectLogoMobile,
     mobileImage: "",
     addLinks: true,
     v1: "https://christianrosa518.github.io/pWebsite/",
     v2: "https://christianrosa518.github.io/react-personal-web/",
   };
+
+  var ProjectItems = [
+    {
+      img: SassyLogo,
+      altTag: "sassys",
+      ImgReplace: "none",
+      delay: 850,
+      rootMargin: "0px 0px -350px 0px",
+      direction: down,
+      initial: initialD,
+      odd: true,
+      showProject: setSassy,
+    },
+    {
+      img: "none",
+      altTag: "none",
+      ImgReplace: "V3",
+      delay: 950,
+      rootMargin: "0px 0px -350px 0px",
+      direction: down,
+      initial: initialD,
+      odd: false,
+      showProject: setvThree,
+    },
+  ];
 
   return (
     <div className={styles.container}>
@@ -74,116 +111,9 @@ export default function Projects() {
         <p>A collection of all things I did</p>
       </div>
       <div className={styles.projectContainer}>
-        <ProjectItem
-          img={SassyLogo}
-          altTag={"sassys"}
-          ImgReplace={"none"}
-          delay={850}
-          rootMargin={"0px 0px -350px 0px"}
-          direction={down}
-          initial={initialD}
-          odd={true}
-          showProject={setSassy}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"V3"}
-          delay={950}
-          direction={down}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialD}
-          odd={false}
-          showProject={setvThree}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1350}
-          direction={down}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialD}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1750}
-          direction={down}
-          initial={initialD}
-          rootMargin={"0px 0px -350px 0px"}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1750}
-          direction={down}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialD}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={151}
-          direction={up}
-          initial={initialU}
-          rootMargin={"0px 0px -350px 0px"}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={551}
-          direction={up}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialU}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={951}
-          direction={up}
-          initial={initialU}
-          rootMargin={"0px 0px -350px 0px"}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1351}
-          direction={up}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialU}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1751}
-          direction={up}
-          rootMargin={"0px 0px -350px 0px"}
-          initial={initialU}
-          odd={false}
-          showProject={setnully}
-        />
+        {ProjectItems.map((props) => (
+          <ProjectItem {...props} />
+        ))}
         <AnimatePresence>
           {sassy && (
             <CardContainer isActive={setSassy} {...sassys}>
@@ -200,120 +130,20 @@ export default function Projects() {
         </AnimatePresence>
       </div>
       <div className={styles.projectContainerMobile}>
-        <ProjectItem
-          img={SassyLogo}
-          altTag={"sassys"}
-          ImgReplace={"none"}
-          delay={150}
-          direction={center}
-          initial={initialL}
-          rootMargin={"0px 0px -50px 0px"}
-          odd={true}
-          showProject={setSassy}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"v3"}
-          delay={950}
-          direction={center}
-          rootMargin={"0px 0px -50px 0px"}
-          initial={initialR}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1350}
-          direction={center}
-          rootMargin={"0px 0px -50px 0px"}
-          initial={initialL}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1750}
-          direction={center}
-          rootMargin={"0px 0px -50px 0px"}
-          initial={initialR}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1750}
-          rootMargin={"0px 0px -50px 0px"}
-          direction={center}
-          initial={initialL}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={151}
-          direction={center}
-          rootMargin={"0px 0px -50px 0px"}
-          initial={initialR}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={551}
-          rootMargin={"0px 0px -50px 0px"}
-          direction={center}
-          initial={initialL}
-          odd={false}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={951}
-          rootMargin={"0px 0px -50px 0px"}
-          direction={center}
-          initial={initialR}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1351}
-          rootMargin={"0px 0px -50px 0px"}
-          direction={center}
-          initial={initialL}
-          odd={true}
-          showProject={setnully}
-        />
-        <ProjectItem
-          img={"none"}
-          altTag={"none"}
-          ImgReplace={"none"}
-          delay={1751}
-          rootMargin={"0px 0px -50px 0px"}
-          direction={center}
-          initial={initialR}
-          odd={false}
-          showProject={setnully}
-        />
+        {ProjectItems.map((props) => (
+          <ProjectItem {...props} />
+        ))}
         <AnimatePresence>
           {sassy && (
             <CardContainer {...sassys} isActive={setSassy}>
               <CardDesciption {...sassys} />
+            </CardContainer>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {vThree && (
+            <CardContainer isActive={setvThree} {...v3}>
+              <CardDesciption {...v3} />
             </CardContainer>
           )}
         </AnimatePresence>
@@ -382,6 +212,9 @@ interface CardProps {
   websiteLink: string;
   githubLink: string;
   image?: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
   mobileImage?: string;
 }
 
@@ -391,6 +224,9 @@ const CardContainer = ({
   websiteLink,
   githubLink,
   image,
+  image2,
+  image3,
+  image4,
   mobileImage,
   children,
 }: CardProps) => {
@@ -412,17 +248,35 @@ const CardContainer = ({
             alt={"yadayada"}
             className={styles.projectLogoDesktop}
           ></img>
+          <img
+            src={`${image2}`}
+            alt={"yadayada"}
+            className={styles.projectLogoLaptop}
+          ></img>
+          <img
+            src={`${image3}`}
+            alt={"yadayada"}
+            className={styles.projectLogoTablet}
+          ></img>
+          <img
+            src={`${image4}`}
+            alt={"yadayada"}
+            className={styles.projectLogoMobile}
+          ></img>
         </div>
         {children}
       </div>
       <div className={styles.projectButtons}>
         <button
-          className={styles.button}
+          className={styles.revButton}
           onClick={() => {
             window.open(`${websiteLink}`, "_blank");
           }}
         >
           Website Link
+        </button>
+        <button className={styles.button} onClick={() => isActive(false)}>
+          Go Back
         </button>
         <button
           className={styles.revButton}
@@ -431,9 +285,6 @@ const CardContainer = ({
           }}
         >
           Github Link
-        </button>
-        <button className={styles.button} onClick={() => isActive(false)}>
-          Other Projects
         </button>
       </div>
     </motion.div>
@@ -536,6 +387,7 @@ const CardDesciption = ({
                 </span>
               </div>
             )}
+            <br />
           </p>
         </section>
       </div>

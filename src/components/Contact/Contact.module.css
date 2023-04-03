@@ -30,7 +30,7 @@
 .title h2 {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   font-size: calc(1em + 4vmin);
   line-height: 1.1em;
@@ -57,7 +57,7 @@
   height: 75svh;
   width: 70%;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 10px;
   /* border: 2px solid #ff7f51; */
   /* background-color: yellow; */
   overflow: hidden;
@@ -79,7 +79,7 @@
   align-content: center;
   flex-wrap: wrap;
   background-color: #3a3a3a;
-  border-radius: 20px;
+  border-radius: 10px;
   gap: 12px;
 }
 
@@ -217,7 +217,6 @@ select {
     font-family: "Montserrat", sans-serif;
     font-size: calc(1em + 0.6vmin);
     font-weight: 700;
-    font-style: italic;
     color: #ff7f51;
   }
 }
@@ -264,7 +263,6 @@ select {
     font-family: "Montserrat", sans-serif;
     font-size: calc(0.7em + 0.5vmin);
     font-weight: 700;
-    font-style: italic;
     color: #ff7f51;
   }
 }

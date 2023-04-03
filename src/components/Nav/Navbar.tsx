@@ -9,6 +9,9 @@ interface openProps {
   setOpen: (e: boolean) => void;
 }
 
+var resume =
+  "https://drive.google.com/file/d/1vlEc3YO8DKduZ7aEu9Aaj_RnqCMwRhDH/view?usp=share_link";
+
 const Navbar = ({ open, setOpen }: openProps) => {
   const [color, setColor] = useState<boolean>(false);
   const [navColor, setNavColor] = useState<boolean>(false);
@@ -23,7 +26,7 @@ const Navbar = ({ open, setOpen }: openProps) => {
   appHeight();
 
   return (
-    <header className={`Navbar `}>
+    <header className={`Navbar`}>
       <div className="navContainer">
         <div
           className={`logo ${open ? "logoColor" : ""} ${
@@ -49,6 +52,18 @@ const Navbar = ({ open, setOpen }: openProps) => {
           onMouseOut={() => setColor(!color)}
         >
           <div className="burger_icon"></div>
+        </div>
+        <div className="desktopNav">
+          <a href={resume} target={"_blank"} rel={"noreferrer"}>
+            Resume
+          </a>
+          <a
+            href="https://github.com/ChristianRosa518"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            Github
+          </a>
         </div>
       </div>
     </header>
@@ -94,11 +109,7 @@ export const BurgerMenu = ({ open, setOpen }: openProps) => {
             transition={{ delay: 0.15 }}
             exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
           >
-            <a
-              href="https://drive.google.com/file/d/1vlEc3YO8DKduZ7aEu9Aaj_RnqCMwRhDH/view?usp=share_link"
-              target={"_blank"}
-              rel={"noreferrer"}
-            >
+            <a href={resume} target={"_blank"} rel={"noreferrer"}>
               Resume
             </a>
           </motion.li>
@@ -115,21 +126,6 @@ export const BurgerMenu = ({ open, setOpen }: openProps) => {
               rel={"noreferrer"}
             >
               Github
-            </a>
-          </motion.li>
-          <motion.li
-            key={"List3"}
-            initial={animateFrom}
-            animate={animateTo}
-            transition={{ delay: 0.25 }}
-            exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
-          >
-            <a
-              href="https://www.instagram.com/chedic_/"
-              target={"_blank"}
-              rel={"noreferrer"}
-            >
-              Instagram
             </a>
           </motion.li>
         </motion.ul>

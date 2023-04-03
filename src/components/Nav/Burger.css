@@ -1,7 +1,7 @@
 .burger_container {
   position: relative;
   pointer-events: all;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -75,7 +75,7 @@
   font-family: "Kanit", sans-serif;
 
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   font-size: 32px;
   transition: 0.3s;
@@ -87,7 +87,7 @@
   pointer-events: all;
 
   font-family: "Kanit", sans-serif;
-  font-style: italic;
+  font-style: normal;
 
   font-weight: 500;
   display: none;
@@ -108,29 +108,39 @@
   /* color: rgba(255, 130, 88, 1); */
 }
 
-/* LAPTOP LARGE */
-@media screen and (min-width: 1440px) and (max-device-width: 1919px) {
-}
-/* LAPTOP */
-@media screen and (min-width: 1024px) and (max-device-width: 1439px) {
+.desktopNav {
+  display: block;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
 }
 
-/* For Tablet View */
-@media screen and (min-width: 768px) and (max-device-width: 1024px) {
+.desktopNav a {
+  cursor: pointer;
+  pointer-events: all;
+
+  font-family: "Kanit", sans-serif;
+  font-style: italic;
+  font-size: 24px;
+
+  color: beige;
+
+  border: none;
+  text-decoration: none;
 }
 
 @media all and (max-width: 767px) {
-  /* Transition to mobile, change orientations */
-}
-@media screen and (max-width: 640px) {
+  .burger_container {
+    display: flex;
+  }
+  .desktopNav {
+    display: none;
+  }
 }
 
-/* For Mobile Portrait View */
-@media screen and (max-width: 480px) {
-}
-
-@media screen and (max-width: 320px) {
-}
 @media screen and (max-width: 767px) and (max-height: 500px) {
   .logo {
     font-size: 24px;

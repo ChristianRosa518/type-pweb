@@ -14,7 +14,7 @@
 .title h2 {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   font-size: calc(1em + 4vmin);
   line-height: 1.1em;
@@ -38,7 +38,7 @@
   height: 80svh;
   width: 70%;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 10px;
   /* border: 2px solid #ff7f51; */
   /* background-color: yellow; */
   overflow: hidden;
@@ -47,6 +47,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.imgContainer {
+  height: 100%;
+  width: 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutContainer img {
+  height: 80%;
+  width: 90%;
+  object-fit: cover;
+
+  border-radius: 10px;
 }
 
 .imageContainer {
@@ -71,7 +87,7 @@
   color: beige;
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
 
   font-size: calc(1em + 3vmin);
   line-height: 1.1em;
@@ -105,8 +121,19 @@
     flex-direction: column;
     width: 85%;
   }
-  .imageContainer {
-    height: 0px;
+  .imgContainer {
+    height: 50%;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutContainer img {
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
   }
 
   .aboutInfoContainer {

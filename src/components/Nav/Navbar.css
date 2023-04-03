@@ -9,7 +9,7 @@
 
 .Navbar {
   height: 7%;
-  /* height: 7svh; */
+  height: 7svh;
 
   width: 100%;
   margin: 0 auto;
@@ -65,7 +65,7 @@
   pointer-events: all;
   font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   color: #4e4e4e;
   text-decoration: none;
   transition: 0.4s;
@@ -82,6 +82,7 @@
   cursor: pointer;
   font-family: "Kanit", sans-serif;
   font-weight: 700;
+  font-style: normal;
   font-size: calc(1em + 2vmin);
   position: absolute;
   height: 40px;

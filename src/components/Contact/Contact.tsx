@@ -121,11 +121,11 @@ const Form = ({ active, setActive }: FormProps) => {
         <label>Email :</label>
         <input {...register("email")} />
       </div>
-      <div className={styles.formItem}>
+      {/* <div className={styles.formItem}>
         <label>Number :</label>
         <input {...register("number")} />
-      </div>
-      <div className={styles.formItem}>
+      </div> */}
+      {/* <div className={styles.formItem}>
         <label>Inquiry :</label>
         <select {...register("messageReason")}>
           <option value="other">Other</option>
@@ -133,7 +133,7 @@ const Form = ({ active, setActive }: FormProps) => {
           <option value="Personal Project">Personal Project</option>
           <option value="Advice">Advice</option>
         </select>
-      </div>
+      </div> */}
       <div className={styles.formItemMessage}>
         <label>Message : </label>
         <textarea

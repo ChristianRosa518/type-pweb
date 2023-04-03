@@ -120,7 +120,6 @@ const Step = ({
             : ""
         }
         }`}
-        onClick={() => toggleColor()}
       ></div>
       <FirstStep
         color={color}
@@ -223,7 +222,6 @@ const FirstStep = ({
       className={`firstStep ${
         state.active ? "firstStepLock" : "" || color ? "firstStepLock" : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
@@ -276,7 +274,6 @@ const SecondStep = ({
           ? "secondStepLock"
           : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
@@ -329,7 +326,6 @@ const ThirdStep = ({
           ? "thirdStepLock"
           : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
@@ -382,7 +378,6 @@ const FourthStep = ({
           ? "fourthStepLock"
           : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
@@ -435,7 +430,6 @@ const FifthStep = ({
           ? "fifthStepLock"
           : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
@@ -487,7 +481,6 @@ const SixthStep = ({
           ? "sixthStepLock"
           : ""
       }`}
-      onClick={() => changeState()}
     ></motion.div>
   );
 };
