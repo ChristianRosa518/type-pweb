@@ -220,7 +220,7 @@ const FirstStep = ({
       animate={"animate"}
       variants={Var}
       className={`firstStep ${
-        state.active ? "firstStepLock" : "" || color ? "firstStepLock" : "test"
+        state.active ? "firstStepLock" : "" || color ? "firstStepLock" : ""
       }`}
     ></motion.div>
   );
