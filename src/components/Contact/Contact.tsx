@@ -79,16 +79,16 @@ const Form = ({ active, setActive }: FormProps) => {
 
   const onSubmit: SubmitHandler<IFormInput> = (data: any /* cop out.*/) => {
     console.log(data);
-    emailjs
-      .send("service_1d6oo6u", "template_rnrja4r", data, "F7eoeUPRLaGd4Yx7q")
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    // emailjs
+    //   .send("service_1d6oo6u", "template_rnrja4r", data, "F7eoeUPRLaGd4Yx7q")
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
     setActive(false);
   };
 
