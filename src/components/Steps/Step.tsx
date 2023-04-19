@@ -111,7 +111,9 @@ const Step = ({
   }
   return (
     <div className={"step"}>
-      <div
+      <motion.div
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
         className={`initialStep ${
           active
             ? "initialStepLock"
@@ -120,7 +122,7 @@ const Step = ({
             : ""
         }
         }`}
-      ></div>
+      ></motion.div>
       <FirstStep
         color={color}
         getString={getString}
@@ -199,6 +201,7 @@ const FirstStep = ({
   });
 
   let Var: any = {
+    hidden: { width: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -216,9 +219,10 @@ const FirstStep = ({
   }
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`firstStep ${
         state.active ? "firstStepLock" : "" || color ? "firstStepLock" : ""
       }`}
