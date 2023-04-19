@@ -112,8 +112,10 @@ const Step = ({
   return (
     <div className={"step"}>
       <motion.div
+        initial={{ x: "100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ ease: "backInOut", duration: 1.6, delay: 0.7 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.3 }}
         className={`initialStep ${
           active
             ? "initialStepLock"
@@ -201,7 +203,8 @@ const FirstStep = ({
   });
 
   let Var: any = {
-    hidden: { width: "0%" },
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -221,6 +224,8 @@ const FirstStep = ({
     <motion.div
       variants={Var}
       initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.6 }}
       animate={"animate"}
       viewport={{ once: true }}
       className={`firstStep ${
@@ -260,6 +265,8 @@ const SecondStep = ({
   }
 
   let Var: any = {
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -268,9 +275,12 @@ const SecondStep = ({
 
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.5 }}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`secondStep ${
         state.active
           ? "secondStepLock"
@@ -312,6 +322,8 @@ const ThirdStep = ({
   }
 
   let Var: any = {
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -320,9 +332,12 @@ const ThirdStep = ({
 
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.4 }}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`thirdStep ${
         state.active
           ? "thirdStepLock"
@@ -364,6 +379,8 @@ const FourthStep = ({
   }
 
   let Var: any = {
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -372,9 +389,12 @@ const FourthStep = ({
 
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.3 }}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`fourthStep ${
         state.active
           ? "fourthStepLock"
@@ -416,6 +436,8 @@ const FifthStep = ({
   }
 
   let Var: any = {
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -424,9 +446,12 @@ const FifthStep = ({
 
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.2 }}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`fifthStep ${
         state.active
           ? "fifthStepLock"
@@ -457,6 +482,8 @@ const SixthStep = ({
   });
 
   let Var: any = {
+    hidden: { x: "100%" },
+    visible: { x: "0%" },
     animate: {
       width: [state.first, state.final, state.first],
       transition: { duration: state.duration, repeat: Infinity },
@@ -475,9 +502,12 @@ const SixthStep = ({
 
   return (
     <motion.div
-      id={"initialOne"}
-      animate={"animate"}
       variants={Var}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ ease: "backInOut", duration: 1.6, delay: 0.1 }}
+      animate={"animate"}
+      viewport={{ once: true }}
       className={`sixthStep ${
         state.active
           ? "sixthStepLock"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StepChanger, StepContainer } from "../Steps/Step";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 import styles from "./Home.module.css";
 
 // Changed file to jsx because of Typewriter component.
@@ -105,8 +106,18 @@ export default function Home() {
             : ""
         }`}
       >
-        <h1>Your next</h1>
-        <p>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.5 }}
+        >
+          Your next
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.8 }}
+        >
           &nbsp;
           <Typewriter
             words={[
@@ -120,7 +131,7 @@ export default function Home() {
             loop={1}
             delaySpeed={2500}
           />
-        </p>
+        </motion.p>
       </div>
     </div>
   );
