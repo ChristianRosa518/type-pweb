@@ -1,25 +1,24 @@
 {
   "files": {
-    "main.css": "/type-pweb/static/css/main.80a0898b.css",
-    "main.js": "/type-pweb/static/js/main.cab75f10.js",
+    "main.css": "/type-pweb/static/css/main.82508db3.css",
+    "main.js": "/type-pweb/static/js/main.a8a4431d.js",
     "static/js/787.01a614bc.chunk.js": "/type-pweb/static/js/787.01a614bc.chunk.js",
     "static/media/LaptopSassys.png": "/type-pweb/static/media/LaptopSassys.7ea67eb60d13350f1e1c.png",
     "static/media/DesktopSassys.png": "/type-pweb/static/media/DesktopSassys.c50fab2f1547e29289b7.png",
     "static/media/sassymobile.png": "/type-pweb/static/media/sassymobile.f0323575b416f4b5dbca.png",
     "static/media/SASSYSTABLET.png": "/type-pweb/static/media/SASSYSTABLET.07f86f96c6c6815cef1c.png",
-    "static/media/personalwebprofile.jpg": "/type-pweb/static/media/personalwebprofile.93000c69c1e967d056ec.jpg",
     "static/media/LaptopPWEB.png": "/type-pweb/static/media/LaptopPWEB.e4416c30e640fe733aca.png",
     "static/media/Logo.png": "/type-pweb/static/media/Logo.07a51cb978e377b2171e.png",
     "static/media/pwebmobile.png": "/type-pweb/static/media/pwebmobile.d20a3c3ba9d41cb61be3.png",
     "static/media/DesktopPWEB.png": "/type-pweb/static/media/DesktopPWEB.b6ee6c1661ce03cf769b.png",
     "static/media/TABLETPWEB.png": "/type-pweb/static/media/TABLETPWEB.e650a0b1002ddec725f1.png",
     "index.html": "/type-pweb/index.html",
-    "main.80a0898b.css.map": "/type-pweb/static/css/main.80a0898b.css.map",
-    "main.cab75f10.js.map": "/type-pweb/static/js/main.cab75f10.js.map",
+    "main.82508db3.css.map": "/type-pweb/static/css/main.82508db3.css.map",
+    "main.a8a4431d.js.map": "/type-pweb/static/js/main.a8a4431d.js.map",
     "787.01a614bc.chunk.js.map": "/type-pweb/static/js/787.01a614bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80a0898b.css",
-    "static/js/main.cab75f10.js"
+    "static/css/main.82508db3.css",
+    "static/js/main.a8a4431d.js"
   ]
 }
