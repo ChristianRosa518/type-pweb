@@ -19,7 +19,7 @@ function App() {
       <Home />
       <Navbar open={open} setOpen={setOpen} />
       <div className="section">
-        <About />
+        {/* <About /> */}
         <Projects />
         <Skills />
         <Contact />

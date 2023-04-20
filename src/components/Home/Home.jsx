@@ -110,6 +110,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 1.5 }}
+          viewport={{ once: true }}
         >
           Your next
         </motion.h1>
@@ -117,6 +118,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 1.8 }}
+          viewport={{ once: true }}
         >
           &nbsp;
           <Typewriter
