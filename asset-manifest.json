@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/type-pweb/static/css/main.82508db3.css",
-    "main.js": "/type-pweb/static/js/main.a8a4431d.js",
+    "main.css": "/type-pweb/static/css/main.3e13cc73.css",
+    "main.js": "/type-pweb/static/js/main.74f6da84.js",
     "static/js/787.01a614bc.chunk.js": "/type-pweb/static/js/787.01a614bc.chunk.js",
     "static/media/LaptopSassys.png": "/type-pweb/static/media/LaptopSassys.7ea67eb60d13350f1e1c.png",
     "static/media/DesktopSassys.png": "/type-pweb/static/media/DesktopSassys.c50fab2f1547e29289b7.png",
@@ -13,12 +13,12 @@
     "static/media/DesktopPWEB.png": "/type-pweb/static/media/DesktopPWEB.b6ee6c1661ce03cf769b.png",
     "static/media/TABLETPWEB.png": "/type-pweb/static/media/TABLETPWEB.e650a0b1002ddec725f1.png",
     "index.html": "/type-pweb/index.html",
-    "main.82508db3.css.map": "/type-pweb/static/css/main.82508db3.css.map",
-    "main.a8a4431d.js.map": "/type-pweb/static/js/main.a8a4431d.js.map",
+    "main.3e13cc73.css.map": "/type-pweb/static/css/main.3e13cc73.css.map",
+    "main.74f6da84.js.map": "/type-pweb/static/js/main.74f6da84.js.map",
     "787.01a614bc.chunk.js.map": "/type-pweb/static/js/787.01a614bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.82508db3.css",
-    "static/js/main.a8a4431d.js"
+    "static/css/main.3e13cc73.css",
+    "static/js/main.74f6da84.js"
   ]
 }
