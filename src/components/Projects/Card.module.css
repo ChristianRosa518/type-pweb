@@ -1,5 +1,5 @@
 .container {
-  height: 50%;
+  height: 40svh;
   width: 20%;
   border-radius: 5%;
   overflow: hidden;
@@ -9,7 +9,6 @@
 
 .itemEven {
   height: 100%;
-  width: 100%;
   background-color: #313131;
   display: flex;
   justify-content: center;
@@ -20,7 +19,6 @@
 
 .itemOdd {
   height: 100%;
-  width: 100%;
   background-color: #444444;
 
   display: flex;
@@ -86,7 +84,7 @@
   }
   .container {
     width: 50%;
-    height: 20%;
+    height: 20svh;
   }
 }
 

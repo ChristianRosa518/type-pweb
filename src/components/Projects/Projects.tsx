@@ -19,6 +19,7 @@ export default function Projects() {
   const [nully, setnully] = useState<Boolean>(false);
   const [sassy, setSassy] = useState<Boolean>(false);
   const [vThree, setvThree] = useState<Boolean>(false);
+  const [extend, setExtend] = useState<Boolean>(false);
 
   // Tablet and bigger animations
   const initialD = { y: "-150%" };
@@ -53,6 +54,7 @@ export default function Projects() {
     image3: SassyProjectLogoTablet,
     image4: SassyProjectLogoMobile,
     mobileImage: "",
+    extend: setExtend,
   };
 
   var v3 = {
@@ -77,6 +79,7 @@ export default function Projects() {
     addLinks: true,
     v1: "https://christianrosa518.github.io/pWebsite/",
     v2: "https://christianrosa518.github.io/react-personal-web/",
+    extend: setExtend,
   };
 
   var ProjectItems = [
@@ -90,6 +93,8 @@ export default function Projects() {
       initial: initialD,
       odd: true,
       showProject: setSassy,
+      extend: extend,
+      setExtend: setExtend,
     },
     {
       img: "none",
@@ -101,6 +106,8 @@ export default function Projects() {
       initial: initialD,
       odd: false,
       showProject: setvThree,
+      extend: extend,
+      setExtend: setExtend,
     },
   ];
 
@@ -110,7 +117,11 @@ export default function Projects() {
         <h2>My Projects</h2>
         <p>A collection of all things I did</p>
       </div>
-      <div className={styles.projectContainer}>
+      <div
+        className={`${styles.projectContainer} ${
+          extend ? `${styles.extendCon}` : `${styles.extendConClose}`
+        }`}
+      >
         {ProjectItems.map((props) => (
           <ProjectItem {...props} />
         ))}
@@ -129,7 +140,13 @@ export default function Projects() {
           )}
         </AnimatePresence>
       </div>
-      <div className={styles.projectContainerMobile}>
+      <div
+        className={`${styles.projectContainerMobile} ${
+          extend
+            ? `${styles.extendConMobile}`
+            : `${styles.extendConCloseMobile}`
+        }`}
+      >
         {ProjectItems.map((props) => (
           <ProjectItem {...props} />
         ))}
@@ -161,7 +178,9 @@ interface cardy {
   initial: object;
   odd: boolean;
   rootMargin: string;
-  showProject: (active: boolean) => void;
+  showProject: Dispatch<SetStateAction<Boolean>>;
+  extend: Boolean;
+  setExtend: Dispatch<SetStateAction<Boolean>>;
 }
 
 const ProjectItem = ({
@@ -173,6 +192,8 @@ const ProjectItem = ({
   initial,
   odd,
   rootMargin,
+  extend,
+  setExtend,
   showProject,
 }: cardy) => {
   const { ref, inView } = useInView({
@@ -182,6 +203,12 @@ const ProjectItem = ({
     triggerOnce: true,
     delay: delay,
   });
+
+  function changeExtend() {
+    setExtend(true);
+    showProject(true);
+  }
+
   return (
     <div className={card.container} ref={ref}>
       {inView && (
@@ -189,8 +216,10 @@ const ProjectItem = ({
           key={delay.toString()}
           initial={initial}
           animate={direction}
-          className={`${odd ? `${card.itemOdd}` : `${card.itemEven}`}`}
-          onClick={() => showProject(true)}
+          className={`${odd ? `${card.itemOdd}` : `${card.itemEven}`} ${
+            extend ? `${card.extendCard}` : `${card.extendCardClose}`
+          } `}
+          onClick={() => changeExtend()}
         >
           <div className={card.imgCon}>
             {ImgReplace !== "none" && <p>{ImgReplace}</p>}
@@ -207,6 +236,7 @@ const ProjectItem = ({
 interface CardProps {
   isActive: Dispatch<SetStateAction<Boolean>>;
   children: JSX.Element;
+  extend: Dispatch<SetStateAction<Boolean>>;
 
   title: string;
   websiteLink: string;
@@ -220,6 +250,7 @@ interface CardProps {
 
 const CardContainer = ({
   isActive,
+  extend,
   title,
   websiteLink,
   githubLink,
@@ -230,11 +261,15 @@ const CardContainer = ({
   mobileImage,
   children,
 }: CardProps) => {
+  function close() {
+    extend(false);
+    isActive(false);
+  }
   return (
     <motion.div
       key="sassy"
       initial={{ y: "100%" }}
-      animate={{ y: "0%", transition: { duration: 0.1 } }}
+      animate={{ y: "0%", transition: { duration: 0.1, delay: 0.3 } }}
       exit={{ y: "300%", transition: { duration: 0.4 } }}
       className={styles.projectItemContainer}
     >
@@ -275,7 +310,7 @@ const CardContainer = ({
         >
           Website Link
         </button>
-        <button className={styles.button} onClick={() => isActive(false)}>
+        <button className={styles.button} onClick={() => close()}>
           Go Back
         </button>
         <button
