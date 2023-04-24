@@ -123,7 +123,7 @@ export default function Projects() {
         }`}
       >
         {ProjectItems.map((props) => (
-          <ProjectItem {...props} />
+          <ProjectItem {...props} key={props.altTag} />
         ))}
         <AnimatePresence>
           {sassy && (
@@ -148,7 +148,7 @@ export default function Projects() {
         }`}
       >
         {ProjectItems.map((props) => (
-          <ProjectItem {...props} />
+          <ProjectItem {...props} key={props.altTag} />
         ))}
         <AnimatePresence>
           {sassy && (
@@ -375,22 +375,22 @@ const CardDesciption = ({
         </div>
         {active === 0 && (
           <ul>
-            {languages.map((item) => (
-              <li>{item}</li>
+            {languages.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}
         {active === 1 && (
           <ul>
-            {apis.map((item) => (
-              <li>{item}</li>
+            {apis.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}
         {active === 2 && (
           <ul>
-            {cicd.map((item) => (
-              <li>{item}</li>
+            {cicd.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}

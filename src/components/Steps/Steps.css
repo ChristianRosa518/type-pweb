@@ -100,7 +100,7 @@
 .initialStepLock {
   background-color: #be3f16;
   /* background-color: yellow; */
-  transition: all 4s;
+  transition: background-color 4s;
 }
 
 .firstStepLock {

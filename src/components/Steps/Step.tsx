@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Steps.css";
+import { get } from "http";
 
 interface StepContainerProps {
   Count: number;
@@ -110,7 +111,13 @@ const Step = ({
     }
   }
   return (
-    <div className={"step"}>
+    <motion.div
+      className={"step"}
+      initial={{ x: "100%" }}
+      whileInView={{ x: "0%" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0, delay: getNum(0.1, 0.9) }}
+    >
       <motion.div
         initial={{ x: "100%" }}
         whileInView={{ x: "0%" }}
@@ -179,7 +186,7 @@ const Step = ({
         colorAdd={colorAdd}
         colorDecrease={colorDecrease}
       />
-    </div>
+    </motion.div>
   );
 };
 
