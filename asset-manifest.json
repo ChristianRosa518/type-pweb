@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/type-pweb/static/css/main.3e13cc73.css",
-    "main.js": "/type-pweb/static/js/main.86a712fe.js",
+    "main.css": "/type-pweb/static/css/main.dfd7aa5c.css",
+    "main.js": "/type-pweb/static/js/main.2713721a.js",
     "static/js/787.01a614bc.chunk.js": "/type-pweb/static/js/787.01a614bc.chunk.js",
     "static/media/LaptopSassys.png": "/type-pweb/static/media/LaptopSassys.7ea67eb60d13350f1e1c.png",
     "static/media/DesktopSassys.png": "/type-pweb/static/media/DesktopSassys.c50fab2f1547e29289b7.png",
     "static/media/sassymobile.png": "/type-pweb/static/media/sassymobile.f0323575b416f4b5dbca.png",
+    "static/media/4858838.jpg": "/type-pweb/static/media/4858838.a00d20b42f2b93fab7fb.jpg",
     "static/media/SASSYSTABLET.png": "/type-pweb/static/media/SASSYSTABLET.07f86f96c6c6815cef1c.png",
     "static/media/LaptopPWEB.png": "/type-pweb/static/media/LaptopPWEB.e4416c30e640fe733aca.png",
     "static/media/Logo.png": "/type-pweb/static/media/Logo.07a51cb978e377b2171e.png",
@@ -13,12 +14,12 @@
     "static/media/DesktopPWEB.png": "/type-pweb/static/media/DesktopPWEB.b6ee6c1661ce03cf769b.png",
     "static/media/TABLETPWEB.png": "/type-pweb/static/media/TABLETPWEB.e650a0b1002ddec725f1.png",
     "index.html": "/type-pweb/index.html",
-    "main.3e13cc73.css.map": "/type-pweb/static/css/main.3e13cc73.css.map",
-    "main.86a712fe.js.map": "/type-pweb/static/js/main.86a712fe.js.map",
+    "main.dfd7aa5c.css.map": "/type-pweb/static/css/main.dfd7aa5c.css.map",
+    "main.2713721a.js.map": "/type-pweb/static/js/main.2713721a.js.map",
     "787.01a614bc.chunk.js.map": "/type-pweb/static/js/787.01a614bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e13cc73.css",
-    "static/js/main.86a712fe.js"
+    "static/css/main.dfd7aa5c.css",
+    "static/js/main.2713721a.js"
   ]
 }
